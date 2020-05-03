@@ -1,0 +1,11 @@
+ #img1{
+width: 100px;
+height: 100px;
+position:relative;
+}
+#img2{
+z-index: -1;
+width: 170px;
+height: 115px;
+position: relative;
+}
