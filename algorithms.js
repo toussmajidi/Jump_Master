@@ -1,5 +1,5 @@
 $(document).ready(() =>{
-   let $img = $(window);
+  /* let $img = $(window);
   $("#img2").hide();
   $img.mousedown( function() {
         $("#img1").hide();
@@ -33,8 +33,7 @@ $(document).keydown(function(e){
             top: "+=50"
         });
         break;
-    }
-});
+    }*/
 
 $(function () {
     var body = $('body');
@@ -52,4 +51,5 @@ $(function () {
     }
     setTimeout(nextBackground, 5000);
     body.css('background', backgrounds[0]);
+});
 });
