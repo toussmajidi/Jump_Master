@@ -1,0 +1,7 @@
+#canvas {
+    margin:auto;
+    border-style: ridge;
+    border-color: grey;
+    width: 500px;
+    height: 300px;
+}
