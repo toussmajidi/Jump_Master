@@ -4,8 +4,8 @@ $(document).ready(() => {
     let obstacles = [];
     let blockW = 20;
     let blockH = 20;
-    let blockX = 200;
-    let blockY = 150;
+    let blockX = 26;
+    let blockY = 90;
     let color = "black";
 
     function startGame(){
