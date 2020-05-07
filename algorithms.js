@@ -15,4 +15,3 @@ $(function () {
     setTimeout(nextBackground, 5000);
     body.css('background', backgrounds[0]);
 });
-});
