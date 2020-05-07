@@ -65,7 +65,7 @@ h3 {
 }
 
 /* Links inside the dropdown */
-.left_dropdown-content a {
+.left_dropdown-content img {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -73,7 +73,7 @@ h3 {
 }
 
 /* Change color of dropdown links on hover */
-.left_dropdown-content a:hover {
+.left_dropdown-content img:hover {
     background-color: grey;
 }
 
@@ -123,4 +123,9 @@ h3 {
 /* Show the dropdown menu on hover */
 .right_dropdown:hover .right_dropdown-content {
     display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
 }
