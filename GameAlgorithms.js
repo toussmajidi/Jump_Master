@@ -1,5 +1,25 @@
 $(document).ready(() => {
-    let $board = $("#board");
+    let $board = $("#gameArea");
     let $ctx = $board[0].getContext('2d');
+    let obstacles = [];
+    let blockW = 20;
+    let blockH = 20;
+    let blockX = 200;
+    let blockY = 150;
+    let color = "black";
+
+    function startGame(){
+
+    }
+
+    function clear(){
+        $ctx.fillStyle = "white";
+        $ctx.fillRect(0, 0, 100000, 100000);
+    }
+
+    function constructor(blockW, blockH, color, blockX, blockY) {
+        $ctx.fillStyle = color;
+        $ctx.fillRect(blockX, blockY, blockW, blockH);
+    }
 
 });
