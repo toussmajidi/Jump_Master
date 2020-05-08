@@ -9,7 +9,7 @@ var dy = -2;
 
 
 var img = new Image();
-img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL4TkLZoF7w69JWH13dlIlSq19DbFqxb1fuIL0m9lYTVVpPwaW&usqp=CAU";
+img.src = "Savannah_Level.png";
 window.onload = function () {
     var scrollspeed = 10;
     var imgWidth = 0;
