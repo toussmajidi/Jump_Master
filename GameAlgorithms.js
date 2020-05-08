@@ -1,7 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-canvas.width = 600;
-canvas.height = 180;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 var x = canvas.width * (2 / 3);
 var y = canvas.height - 50;
 var dx = 2;
@@ -30,9 +30,15 @@ window.onload = function () {
 
         imgWidth += scrollspeed;
 
-        if (imgWidth == canvas.width)
+        if (imgWidth == canvas.width){
             imgWidth = 0;
+        }
 
+        function jump(event){
+            if(event.key === "j"){
+                y + 3;
+            }
+        }
         window.requestAnimationFrame(loop);
     }
 
