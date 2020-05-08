@@ -6,6 +6,7 @@ var x = canvas.width * (2 / 3);
 var y = canvas.height - 50;
 var dx = 2;
 var dy = -2;
+var suckumum;
 
 
 var img = new Image();
