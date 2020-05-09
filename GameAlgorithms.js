@@ -30,12 +30,12 @@ window.onload = function () {
 
         imgWidth += scrollspeed;
 
-        if (imgWidth == canvas.width){
+        if (imgWidth == canvas.width) {
             imgWidth = 0;
         }
 
-        function jump(event){
-            if(event.key === "j"){
+        function jump(event) {
+            if (event.key === "j") {
                 y + 3;
             }
         }
