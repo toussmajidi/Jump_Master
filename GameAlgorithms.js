@@ -1,12 +1,11 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 400;
 var x = canvas.width * (2 / 3);
-var y = canvas.height - 50;
+var y = canvas.height - 100;
 var dx = 2;
 var dy = -2;
-var suckumum;
 
 
 var img = new Image();
