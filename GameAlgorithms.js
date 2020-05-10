@@ -4,8 +4,9 @@ canvas.width = 1000;
 canvas.height = 400;
 var x = canvas.width * (2 / 3);
 var y = canvas.height - 100;
-var dy = 50;
-var gravity = -4.9;
+var by = canvas.height - 100;
+var dy = 0;
+var gravity = 0.1;
 var time = new Date();
 var boxes = [];
 var n = 0;
@@ -14,15 +15,21 @@ var rectW = 100;
 
 window.addEventListener("keypress", jump);
 
-function jump() {
-    var t = time/1000;
-    if (event.key === "b"){
-    y = y + ((gravity * Math.pow(t,2)) + dy);
+function jump(event) {
+    if (event.keyCode === 32) {
+        dy = -10;
     }
-    if(y <= 0){
-        y++;
+
+    if (y <= (canvas.height - 100)) {
+        dy = dy + gravity;
     }
+    if (y > (canvas.height - 100)) {
+        y = canvas.height - 100;
+        dy = 0;
     }
+    y = y + dy;
+}
+
 
 
 var img1 = new Image();
@@ -79,7 +86,7 @@ function drawCircle() {
 function drawRect() {
     rectX = n * 3;
     ctx.beginPath();
-    ctx.rect(rectX, y - 40, rectW, 20);
+    ctx.rect(rectX, by - 40, rectW, 20);
     ctx.fillStyle = "green";
     ctx.fill();
     ctx.closePath();
@@ -88,22 +95,22 @@ function drawRect() {
 
 function randomWidth() {
 
-   rectW = Math.floor(Math.random() * 101);
+    rectW = Math.floor(Math.random() * 101);
 
 
 }
 
-function secondlevel(){
+function secondlevel() {
 
     ctx.drawImage(img2, img2Width, 0);
 
     ctx.drawImage(img2, img2Width - canvas.width, 0);
 
 
-            img2Width += scrollspeed;
+    img2Width += scrollspeed;
 
-     if (img2Width == canvas.width) {
-            img2Width = 0;
-        }
+    if (img2Width == canvas.width) {
+        img2Width = 0;
+    }
 
 }
