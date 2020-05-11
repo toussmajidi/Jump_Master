@@ -7,7 +7,6 @@ var y = canvas.height - 100;
 var by = canvas.height - 100;
 var dy = 0;
 var gravity = 0.5;
-var time = new Date();
 var boxes = [];
 var n = 0;
 var rectX = 0;
