@@ -6,7 +6,7 @@ var x = canvas.width * (2 / 3);
 var y = canvas.height - 100;
 var by = canvas.height - 100;
 var dy = 0;
-var gravity = 0.1;
+var gravity = 0.5;
 var time = new Date();
 var boxes = [];
 var n = 0;
@@ -16,18 +16,10 @@ var rectW = 100;
 window.addEventListener("keypress", jump);
 
 function jump(event) {
-    if (event.keyCode === 32) {
+    if (event.keyCode === 32 && y == by) {
         dy = -10;
     }
 
-    if (y <= (canvas.height - 100)) {
-        dy = dy + gravity;
-    }
-    if (y > (canvas.height - 100)) {
-        y = canvas.height - 100;
-        dy = 0;
-    }
-    y = y + dy;
 }
 
 
@@ -39,10 +31,17 @@ window.onload = function () {
     var scrollspeed = 10;
     var img1Width = 0;
     var img2Width = 0;
-    var time = new Date();
 
     function loop() {
 
+        if (y <= (canvas.height - 100)) {
+        dy = dy + gravity;
+    }
+    if (y > (canvas.height - 100)) {
+        y = canvas.height - 100;
+        dy = 0;
+    }
+    y = y + dy;
 
         ctx.drawImage(img1, img1Width, 0);
 
