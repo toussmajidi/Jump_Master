@@ -2,9 +2,18 @@
     margin: auto;
    border: 1px solid black;
   width: 1000px;
-  height: 390px;
+  height: 380px;
   background-color: #cccccc;
   background-image: url("Savannah_Level.png");
+}
+#ball{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  background: red;
+  top: 290px;
+  left: 400px;
 }
 h1{
     text-align: center;
