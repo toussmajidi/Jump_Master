@@ -8,18 +8,7 @@ var gravity = 0.5;
 var boxes = [];
 var n = 0;
 
-window.addEventListener("keypress", jump);
-
-function jump(ev) {
-    if (y == 290) {
-        clearInterval(id);
-    } else if (ev.keyCode === 32 && y == 290) {
-        dy = -10;
-    }
-
-}
-
-
+window.addEventListener("keypress", ballMove);
 var scrollspeed = 10;
 var current = 0;
 var direction = "h";
@@ -32,12 +21,15 @@ function scroll() {
         background.style.backgroundPosition = "0 " + current + "px";
     }
 }
+
 setInterval("scroll()", scrollspeed);
+var SCROLL = setInterval("scroll()", scrollspeed);
+
 
 id = setInterval("ballMove()", 5);
 
-function ballMove(){
-     if (y <= 290) {
+function ballMove() {
+    if (y <= 290) {
         dy = dy + gravity;
     }
     if (y > 290) {
@@ -53,21 +45,20 @@ function ballMove(){
 
 }
 
-  var platformScrollspeed = 15;
-    var platformCurrent = 0;
-    var platformDirection = "c";
+var platformScrollspeed = 15;
+var platformCurrent = 0;
+var platformDirection = "c";
 
-function movePlatform(){
+function movePlatform() {
     platformCurrent -= 1;
     if(platformDirection == "c") {
         platform.style.left = platformCurrent + "px";
-    } else {
+    }else {
         platform.style.left = "0 " + platformCurrent + "px";
 
     }
-    }
+}
 
 
- var PlatformScroll = setInterval("movePlatform()" , platformScrollspeed);
-
+var PlatformScroll = setInterval("movePlatform()", platformScrollspeed);
 
