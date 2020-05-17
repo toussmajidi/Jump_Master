@@ -18,26 +18,26 @@ function jump(event) {
 
 }
 
-    var scrollspeed = 10;
-    var current = 0;
-    var direction = "h";
+var scrollspeed = 10;
+var current = 0;
+var direction = "h";
 
 
-    function scroll() {
-       current -= 1;
-        if (direction == "h") {
-    background.style.backgroundPosition = current + "px 0";
-  } else {
-    background.style.backgroundPosition = "0 " + current + "px";
-  }
+function scroll() {
+    current -= 1;
+    if (direction == "h") {
+        background.style.backgroundPosition = current + "px 0";
+    } else {
+        background.style.backgroundPosition = "0 " + current + "px";
+    }
 }
-  var SCROLL =  setInterval("scroll()" , scrollspeed);
+var SCROLL = setInterval("scroll()", scrollspeed);
 
 
 setInterval("ballMove()", 5);
 
-function ballMove(){
-     if (y <= 290) {
+function ballMove() {
+    if (y <= 290) {
         dy = dy + gravity;
     }
     if (y > 290) {
@@ -52,20 +52,19 @@ function ballMove(){
 
 }
 
-  var platformScrollspeed = 15;
-    var platformCurrent = 0;
-    var platformDirection = "c";
+var platformScrollspeed = 15;
+var platformCurrent = 0;
+var platformDirection = "c";
 
-function movePlatform(){
+function movePlatform() {
     platformCurrent -= 1;
-    if(platformDirection == "c") {
+    if (platformDirection == "c") {
         platform.style.platformPosition = platformCurrent + "px 0";
     } else {
         platform.style.platformPosition = "0 " + platformCurrent + "px";
 
     }
-    }
+}
 
 
- var PlatformScroll = setInterval("movePlatform()" , platformScrollspeed);
-
+var PlatformScroll = setInterval("movePlatform()", platformScrollspeed);
