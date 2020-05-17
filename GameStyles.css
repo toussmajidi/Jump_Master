@@ -1,9 +1,10 @@
-#myCanvas {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+#canvas {
+    margin: auto;
+   border: 1px solid black;
+  width: 1000px;
+  height: 390px;
+  background-color: #cccccc;
+  background-image: url("Savannah_Level.png");
 }
 h1{
     text-align: center;

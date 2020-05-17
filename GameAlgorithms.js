@@ -1,5 +1,4 @@
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+var canvas = document.getElementById("canvas");
 canvas.width = 1000;
 canvas.height = 400;
 var x = canvas.width * (2 / 3);
@@ -23,15 +22,14 @@ function jump(event) {
 
 
 
-var img1 = new Image();
 var im2 = new Image();
-img1.src = "Savannah_Level.png";
-window.onload = function () {
     var scrollspeed = 10;
+    var current = 0;
+    var direction = "h";
     var img1Width = 0;
     var img2Width = 0;
 
-    function loop() {
+    function scroll() {
 
         if (y <= (canvas.height - 100)) {
         dy = dy + gravity;
@@ -42,38 +40,18 @@ window.onload = function () {
     }
     y = y + dy;
 
-        ctx.drawImage(img1, img1Width, 0);
-
-        ctx.drawImage(img1, img1Width - canvas.width, 0);
-
-
-        if (rectX > canvas.width) {
-            n = 0;
-            randomWidth();
-        }
-
-        drawRect();
-
-        drawCircle();
-
-
-
-        img1Width += scrollspeed;
-
-        if (img1Width == canvas.width) {
-            img1Width = 0;
-        }
-        window.requestAnimationFrame(loop);
-        n++;
-
-    }
-
-    loop();
+       current -= 1;
+        if (direction == "h") {
+    canvas.style.backgroundPosition = current + "px 0";
+  } else {
+    canvas.style.backgroundPosition = "0 " + current + "px";
+  }
 }
+    setInterval("scroll()" , scrollspeed);
 
 
 
-function drawCircle() {
+/*function drawCircle() {
     ctx.beginPath();
     ctx.arc(x, y, 10, 0, Math.PI * 2);
     ctx.fillStyle = "blue";
@@ -111,4 +89,4 @@ function secondlevel() {
         img2Width = 0;
     }
 
-}
+}*/
