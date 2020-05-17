@@ -51,9 +51,10 @@ var platformDirection = "c";
 
 function movePlatform() {
     platformCurrent -= 1;
-    if(platformDirection == "c") {
+
+    if (platformDirection == "c") {
         platform.style.left = platformCurrent + "px";
-    }else {
+    } else {
         platform.style.left = "0 " + platformCurrent + "px";
 
     }
@@ -61,4 +62,3 @@ function movePlatform() {
 
 
 var PlatformScroll = setInterval("movePlatform()", platformScrollspeed);
-
