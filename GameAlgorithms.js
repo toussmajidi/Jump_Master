@@ -1,4 +1,4 @@
-var canvas = document.getElementById("canvas");
+var background = document.getElementById("background");
 canvas.width = 1000;
 canvas.height = 400;
 var x = canvas.width * (2 / 3);
@@ -42,9 +42,9 @@ var im2 = new Image();
 
        current -= 1;
         if (direction == "h") {
-    canvas.style.backgroundPosition = current + "px 0";
+    background.style.backgroundPosition = current + "px 0";
   } else {
-    canvas.style.backgroundPosition = "0 " + current + "px";
+    background.style.backgroundPosition = "0 " + current + "px";
   }
 }
     setInterval("scroll()" , scrollspeed);
