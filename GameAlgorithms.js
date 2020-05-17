@@ -59,9 +59,9 @@ var platformDirection = "c";
 function movePlatform() {
     platformCurrent -= 1;
     if (platformDirection == "c") {
-        platform.style.platformPosition = platformCurrent + "px 0";
+        platform.style.backgroundPosition = platformCurrent + "px 0";
     } else {
-        platform.style.platformPosition = "0 " + platformCurrent + "px";
+        platform.style.backgroundPosition = "0 " + platformCurrent + "px";
 
     }
 }
