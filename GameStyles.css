@@ -30,3 +30,11 @@ h2{
 body{
     background-image: url("night_bg.PNG");
 }
+
+#platform {
+    background-color: green;
+  height: 25px;
+  width: 100px;
+float:left;
+ transform: translate(20px, 275px);
+}

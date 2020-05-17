@@ -1,4 +1,5 @@
 var background = document.getElementById("background");
+<<<<<<< HEAD
 var ball = document.getElementById("ball");
 var bgH = background.style.height;
 var bgW = background.style.width;
