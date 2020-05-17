@@ -1,40 +1,44 @@
 #background {
     margin: auto;
-   border: 1px solid black;
-  width: 1000px;
-  height: 380px;
-  background-color: #cccccc;
-  background-image: url("Savannah_Level.png");
+    border: 1px solid black;
+    width: 1000px;
+    height: 380px;
+    background-color: #cccccc;
+    background-image: url("Savannah_Level.png");
 }
-#ball{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  background: red;
-  top: 290px;
-  left: 400px;
+
+#ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    background: red;
+    top: 290px;
+    left: 400px;
 }
-h1{
+
+h1 {
     text-align: center;
     color: darkgreen;
     font-family: fantasy;
     font-size: 50px;
 }
-h2{
+
+h2 {
     text-align: center;
     color: orangered;
     font-family: fantasy;
     font-size: 45px;
 }
-body{
+
+body {
     background-image: url("night_bg.PNG");
 }
 
 #platform {
     background-color: green;
-  height: 25px;
-  width: 100px;
-float:left;
- transform: translate(20px, 275px);
+    height: 25px;
+    width: 100px;
+    float: left;
+    transform: translate(20px, 275px);
 }
