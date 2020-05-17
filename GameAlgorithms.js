@@ -1,4 +1,5 @@
 var background = document.getElementById("background");
+var platform = document.getElementById("platform");
 var ball = document.getElementById("ball");
 var y = 290;
 ball.style.top = y + "px";
@@ -19,13 +20,9 @@ function jump(ev) {
 }
 
 
-
-var im2 = new Image();
 var scrollspeed = 10;
 var current = 0;
 var direction = "h";
-var img1Width = 0;
-var img2Width = 0;
 
 function scroll() {
     current -= 1;
@@ -39,8 +36,8 @@ setInterval("scroll()", scrollspeed);
 
 id = setInterval("ballMove()", 5);
 
-function ballMove(event) {
-    if (y <= 290) {
+function ballMove(){
+     if (y <= 290) {
         dy = dy + gravity;
     }
     if (y > 290) {
@@ -55,3 +52,22 @@ function ballMove(event) {
 
 
 }
+
+  var platformScrollspeed = 15;
+    var platformCurrent = 0;
+    var platformDirection = "c";
+
+function movePlatform(){
+    platformCurrent -= 1;
+    if(platformDirection == "c") {
+        platform.style.left = platformCurrent + "px";
+    } else {
+        platform.style.left = "0 " + platformCurrent + "px";
+
+    }
+    }
+
+
+ var PlatformScroll = setInterval("movePlatform()" , platformScrollspeed);
+
+
