@@ -1,9 +1,9 @@
 var background = document.getElementById("background");
-canvas.width = 1000;
-canvas.height = 400;
-var x = canvas.width * (2 / 3);
-var y = canvas.height - 100;
-var by = canvas.height - 100;
+background.width = 1000;
+background.height = 400;
+var x = background.width * (2 / 3);
+var y = background.height - 100;
+var by = background.height - 100;
 var dy = 0;
 var gravity = 0.5;
 var boxes = [];
@@ -31,11 +31,11 @@ var im2 = new Image();
 
     function scroll() {
 
-        if (y <= (canvas.height - 100)) {
+        if (y <= (background.height - 100)) {
         dy = dy + gravity;
     }
-    if (y > (canvas.height - 100)) {
-        y = canvas.height - 100;
+    if (y > (background.height - 100)) {
+        y = background.height - 100;
         dy = 0;
     }
     y = y + dy;
