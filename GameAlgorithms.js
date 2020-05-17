@@ -1,4 +1,5 @@
 var background = document.getElementById("background");
+var platform = document.getElementById("platform");
 var ball = document.getElementById("ball");
 var bgH = background.style.height;
 var bgW = background.style.width;
@@ -17,14 +18,10 @@ function jump(event) {
 
 }
 
-
-
-var im2 = new Image();
     var scrollspeed = 10;
     var current = 0;
     var direction = "h";
-    var img1Width = 0;
-    var img2Width = 0;
+
 
     function scroll() {
        current -= 1;
@@ -34,9 +31,11 @@ var im2 = new Image();
     background.style.backgroundPosition = "0 " + current + "px";
   }
 }
-    setInterval("scroll()" , scrollspeed);
+  var SCROLL =  setInterval("scroll()" , scrollspeed);
+
 
 setInterval("ballMove()", 5);
+
 function ballMove(){
      if (y <= 290) {
         dy = dy + gravity;
@@ -52,3 +51,21 @@ function ballMove(){
 
 
 }
+
+  var platformScrollspeed = 15;
+    var platformCurrent = 0;
+    var platformDirection = "c";
+
+function movePlatform(){
+    platformCurrent -= 1;
+    if(platformDirection == "c") {
+        platform.style.platformPosition = platformCurrent + "px 0";
+    } else {
+        platform.style.platformPosition = "0 " + platformCurrent + "px";
+
+    }
+    }
+
+
+ var PlatformScroll = setInterval("movePlatform()" , platformScrollspeed);
+
