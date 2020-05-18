@@ -2,7 +2,6 @@ var background = document.getElementById("background");
 var platform = document.getElementById("platform");
 var ball = document.getElementById("ball");
 var y = 290;
-ball.style.top = y + "px";
 var dy = 0;
 var gravity = 0.5;
 var boxes = [];
@@ -21,7 +20,11 @@ function scroll() {
     }
 }
 
-function ballJump() {
+function ballJump(event) {
+
+    if (event.keyCode === 32 && y == 290) {
+        dy = -10;
+    }
     if (y < 290) {
         dy = dy + gravity;
     }
@@ -29,10 +32,10 @@ function ballJump() {
         y = 290
         dy = 0;
     }
-    if (event.keyCode === 32 && y == 290) {
-        dy = -10;
-    }
+
+
     y = y + dy;
+    ball.style.top = y;
 }
 
 var platformCurrent = 0;
@@ -52,6 +55,7 @@ let id = setInterval("animate()", 5);
 
 function animate() {
     scroll();
+    ballJump();
     movePlatform();
 }
-window.addEventListener("keypress", ballJump());
+window.addEventListener("keypress", ballJump);
