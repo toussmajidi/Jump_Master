@@ -34,7 +34,7 @@ var direction = "h";
 let id = null;
 
 
-
+window.addEventListener("keypress", ballJump);
 
 function scroll() {
 
@@ -152,8 +152,6 @@ function animate() {
 }
 
 
-
-window.addEventListener("keypress", ballJump);
 
 function collisionDetection(){
     if(ball.style.backgroundPositionY + ball.style.height>=platform.style.backgroundPositionY  + platform.style.height){
