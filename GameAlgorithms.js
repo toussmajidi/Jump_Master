@@ -13,7 +13,7 @@ var x = 1500;
 
 var dx = 1.2;
 
-var gravity = 0.5;
+var gravity = 0.1;
 
 var boxes = [];
 
@@ -95,7 +95,7 @@ function moveBall() {
 
 
     if (bounce == true && y >= 290) {
-        dy = -10;
+        dy = -5;
     }
     if (y > 290) {
 
@@ -104,20 +104,19 @@ function moveBall() {
         dy = 0;
     }
 
-    y = y + dy;
 
-    ball.style.top = y;
-
-
-    if (y < 190) {
+    if (y < 290) {
 
         dy = dy + gravity;
 
         bounce = false;
-        // alert("y="+y+" dy="+dy);
+
 
     }
 
+    y = y + dy;
+
+    ball.style.top = y;
 
 
 }
@@ -139,4 +138,3 @@ let id = setInterval("animate()", 5);
 
 
 window.addEventListener("keypress", ballJump);
-
