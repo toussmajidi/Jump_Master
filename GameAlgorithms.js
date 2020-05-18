@@ -4,6 +4,10 @@ var platform = document.getElementById("platform");
 
 var ball = document.getElementById("ball");
 
+var play = document.getElementById("play");
+
+var pause = document.getElementById("pause");
+
 var y = 290;
 
 var dy = 0;
@@ -26,6 +30,8 @@ var scrollspeed = 10;
 var current = 0;
 
 var direction = "h";
+
+let id = null;
 
 
 
@@ -121,6 +127,18 @@ function moveBall() {
 
 }
 
+play.addEventListener('click', () => {
+     if (id == null) {
+      id = setInterval("animate()", 5);
+    }
+});
+
+pause.addEventListener('click', () => {
+    if (id != null) {
+      clearInterval(id);
+      id = null;
+    }
+});
 
 function animate() {
 
@@ -133,8 +151,6 @@ function animate() {
 
 }
 
-
-let id = setInterval("animate()", 5);
 
 
 window.addEventListener("keypress", ballJump);

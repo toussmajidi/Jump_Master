@@ -43,3 +43,45 @@ body {
     top: 250px;
     right:135px;
 }
+#play{
+    display:inline-block;
+    top: 500px;
+    margin: auto;
+    border-radius: 12px;
+    background-color: lime;
+    color: white;
+    padding: 16px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999;
+}
+#pause{
+    display: inline-block;
+    top: 500px;
+    margin: auto;
+    border-radius: 12px;
+    background-color: orange;
+    color: white;
+    padding: 16px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999;
+}
+
+#play:hover {background-color: lawngreen;}
+
+#play:active {
+  background-color: limegreen;
+  box-shadow: 0 4px #666;
+  transform: translateY(3px);
+}
+
+#pause:hover {background-color: darkorange;}
+
+#pause:active {
+  background-color: orangered;
+  box-shadow: 0 4px #666;
+  transform: translateY(3px);
+}
