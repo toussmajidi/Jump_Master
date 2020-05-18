@@ -13,7 +13,7 @@ var y = 290;
 var dy = 0;
 
 
-var x = 1500;
+var x = 1200;
 
 var dx = 1.2;
 
@@ -85,9 +85,9 @@ function movePlatform() {
 
     }
 
-    if (x < 10) {
+    if (x < 200) {
 
-        x = 1000;
+        x = 1200;
 
     }
 
