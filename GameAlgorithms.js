@@ -8,6 +8,7 @@ var y = 290;
 
 var dy = 0;
 
+
 var x = 1500;
 
 var dx = 1.2;
@@ -48,6 +49,7 @@ function scroll() {
 
 
 function ballJump(event) {
+
 
 
     if (event.keyCode == 32) {
@@ -95,14 +97,11 @@ function moveBall() {
     if (bounce == true && y >= 290) {
         dy = -10;
     }
-
-
     if (y > 290) {
 
         y = 290
 
         dy = 0;
-
     }
 
     y = y + dy;
@@ -124,8 +123,6 @@ function moveBall() {
 }
 
 
-
-
 function animate() {
 
     scroll();
@@ -137,7 +134,9 @@ function animate() {
 
 }
 
+
 let id = setInterval("animate()", 5);
 
 
 window.addEventListener("keypress", ballJump);
+
