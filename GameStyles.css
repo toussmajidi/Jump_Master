@@ -2,9 +2,9 @@
     margin: auto;
     border: 1px solid black;
     width: 1000px;
-    height: 380px;
+    height: 280px;
     background-color: #cccccc;
-    background-image: url("Savannah_Level.png");
+    background-image: url("Savanah4.PNG");
 }
 
 #ball {
@@ -13,7 +13,7 @@
     border-radius: 50%;
     position: absolute;
     background: red;
-    top: 290px;
+    top: 210px;
     left: 400px;
 }
 
@@ -40,7 +40,7 @@ body {
     height: 25px;
     width: 100px;
     position: absolute;
-    top: 250px;
+    top: 170px;
     right:135px;
 }
 
