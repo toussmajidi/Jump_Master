@@ -3,6 +3,8 @@ var platform = document.getElementById("platform");
 var ball = document.getElementById("ball");
 var y = 290;
 var dy = 0;
+var x = 1000;
+var dx = 1;
 var gravity = 0.5;
 var boxes = [];
 var n = 0;
@@ -42,14 +44,10 @@ var platformCurrent = 0;
 var platformDirection = "c";
 
 function movePlatform() {
-    platformCurrent -= 1;
-
-    if (platformDirection == "c") {
-        platform.style.left = platformCurrent + "px";
-    } else {
-        platform.style.left = "0 " + platformCurrent + "px";
-
-    }
+      if(x > 0){
+       x = x + dx;
+       platform.style.left = x;
+}
 }
 window.addEventListener("keypress", ballJump);
 
