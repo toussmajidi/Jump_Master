@@ -43,12 +43,16 @@ body {
     top: 250px;
     right:135px;
 }
-#play{
-    display:inline-block;
+
+#container{
+    text-align: center;
     top: 500px;
-    margin: auto;
+
+}
+
+.PP{
+    display:inline;
     border-radius: 12px;
-    background-color: lime;
     color: white;
     padding: 16px 18px;
     font-size: 20px;
@@ -56,18 +60,12 @@ body {
     outline: none;
     box-shadow: 0 9px #999;
 }
+
+#play{
+    background-color: lime;
+}
 #pause{
-    display: inline-block;
-    top: 500px;
-    margin: auto;
-    border-radius: 12px;
     background-color: orange;
-    color: white;
-    padding: 16px 18px;
-    font-size: 20px;
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 9px #999;
 }
 
 #play:hover {background-color: lawngreen;}
