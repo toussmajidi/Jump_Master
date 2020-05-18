@@ -52,7 +52,7 @@ function ballJump(event) {
 
     if (event.keyCode == 32) {
 
-       bounce = true;
+        bounce = true;
 
     }
 
@@ -69,19 +69,19 @@ var platformDirection = "c";
 function movePlatform() {
 
 
-    if(x > 0){
+    if (x > 0) {
 
-       x = x - dx;
+        x = x - dx;
 
-       platform.style.left = x;
+        platform.style.left = x;
 
-	}
+    }
 
-	if(x < 10){
+    if (x < 10) {
 
-       x = 1000;
+        x = 1000;
 
-	}
+    }
 
 
 
@@ -89,15 +89,15 @@ function movePlatform() {
 
 
 
- function moveBall(){
+function moveBall() {
 
 
-	if (bounce == true && y >= 290){
-		dy = -10;
-	}
+    if (bounce == true && y >= 290) {
+        dy = -10;
+    }
 
 
-   if (y > 290) {
+    if (y > 290) {
 
         y = 290
 
@@ -115,7 +115,7 @@ function movePlatform() {
         dy = dy + gravity;
 
         bounce = false;
-       // alert("y="+y+" dy="+dy);
+        // alert("y="+y+" dy="+dy);
 
     }
 
@@ -130,7 +130,7 @@ function animate() {
 
     scroll();
 
-	moveBall();
+    moveBall();
 
     movePlatform();
 
