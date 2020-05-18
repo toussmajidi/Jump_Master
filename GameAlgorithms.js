@@ -3,8 +3,9 @@ var platform = document.getElementById("platform");
 var ball = document.getElementById("ball");
 var y = 290;
 var dy = 0;
-var x = 1000;
-var dx = 1;
+var jump;
+var x = 950;
+var dx = -5;
 var gravity = 0.5;
 var boxes = [];
 var n = 0;
@@ -23,16 +24,19 @@ function scroll() {
 }
 
 function ballJump(event) {
-
     if (event.keyCode === 32 && y == 290) {
         dy = -10;
+        jump = true;
+
     }
     if (y < 290) {
+        jump = true
         dy = dy + gravity;
     }
     if (y > 290) {
         y = 290
         dy = 0;
+        jump = false;
     }
 
 
