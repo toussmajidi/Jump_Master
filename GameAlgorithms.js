@@ -21,7 +21,6 @@ function scroll() {
     }
 }
 
-window.addEventListener("keypress", ballJump());
 function ballJump() {
     if (y < 290) {
         dy = dy + gravity;
@@ -55,3 +54,4 @@ function animate() {
     scroll();
     movePlatform();
 }
+window.addEventListener("keypress", ballJump());
