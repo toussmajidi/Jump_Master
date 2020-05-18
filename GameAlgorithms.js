@@ -13,7 +13,7 @@ var y = 290;
 var dy = 0;
 
 
-var x = 1500;
+var x = 1000;
 
 var dx = 1.2;
 
@@ -77,7 +77,7 @@ var platformDirection = "c";
 function movePlatform() {
 
 
-    if (x > 0) {
+    if (x > 100) {
 
         x = x - dx;
 
@@ -85,7 +85,7 @@ function movePlatform() {
 
     }
 
-    if (x < 10) {
+    if (x < 100) {
 
         x = 1000;
 
@@ -156,7 +156,7 @@ function animate() {
 window.addEventListener("keypress", ballJump);
 
 function collisionDetection(){
-    if(ball.style.backgroundPositionY + ball.style.height>=platform.style.backgroundPositionY  + platform.style.height){
+    if(ball.style.top + ball.style.height >= platform.style.top + platform.style.height){
         y = 290;
     }
 }
