@@ -51,6 +51,8 @@ function movePlatform() {
 
     }
 }
+window.addEventListener("keypress", ballJump);
+
 let id = setInterval("animate()", 5);
 
 function animate() {
@@ -58,4 +60,3 @@ function animate() {
     ballJump();
     movePlatform();
 }
-window.addEventListener("keypress", ballJump);
