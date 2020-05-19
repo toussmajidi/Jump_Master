@@ -135,15 +135,15 @@ function moveBall() {
 }
 
 play.addEventListener('click', () => {
-     if (id == null) {
-      id = setInterval("animate()", 5);
+    if (id == null) {
+        id = setInterval("animate()", 5);
     }
 });
 
 pause.addEventListener('click', () => {
     if (id != null) {
-      clearInterval(id);
-      id = null;
+        clearInterval(id);
+        id = null;
     }
 });
 
@@ -159,29 +159,29 @@ function animate() {
 }
 
 
-function trueCollision(){
-  if(collision == true){
-      clearInterval(id);
-  }
+function trueCollision() {
+    if (collision == true) {
+        clearInterval(id);
+    }
 }
 
 
 
 
-function randomY(){
+function randomY() {
 
-           platformDY = Math.floor(Math.random() * 40);
+    platformDY = Math.floor(Math.random() * 40);
 
 
-    if (platformY < 10){
-                  platformY = platformY - platformDY;
-
-    }
-
-    if(platformY>40){
-                   platformY = platformY + platformDY;
+    if (platformY < 10) {
+        platformY = platformY - platformDY;
 
     }
-           platform.style.top = platformY;
+
+    if (platformY > 40) {
+        platformY = platformY + platformDY;
+
+    }
+    platform.style.top = platformY;
 
 }
