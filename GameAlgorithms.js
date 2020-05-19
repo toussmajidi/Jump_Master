@@ -12,12 +12,13 @@ var y = 380;
 
 var dy = 0;
 
-
-
 var x = 1200;
 
-
 var dx = 1.2;
+
+var platformY = 340;
+
+var platformDY = 0;
 
 var gravity = 0.1;
 
@@ -93,6 +94,8 @@ function movePlatform() {
 
         x = 1200;
 
+        randomY();
+
     }
 
 
@@ -153,7 +156,6 @@ function animate() {
     movePlatform();
 
 
-
 }
 
 
@@ -168,5 +170,16 @@ function collisionDetection(){
     if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
         collision = true;
     }
+
+}
+
+
+function randomY(){
+
+           platformDY = Math.floor(Math.random() * 101);
+
+    platformY = platformY - platformDY;
+
+        platform.style.top = platformY;
 
 }
