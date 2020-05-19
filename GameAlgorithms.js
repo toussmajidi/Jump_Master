@@ -165,22 +165,23 @@ function trueCollision(){
   }
 }
 
-function collisionDetection(){
 
-    if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
-        debugger;
-        collision = true;
-    }
-
-}
 
 
 function randomY(){
 
            platformDY = Math.floor(Math.random() * 40);
 
-           platformY = platformY + platformDY;
 
+    if (platformY < 10){
+                  platformY = platformY - platformDY;
+
+    }
+
+    if(platformY>40){
+                   platformY = platformY + platformDY;
+
+    }
            platform.style.top = platformY;
 
 }
