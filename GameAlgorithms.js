@@ -177,10 +177,10 @@ function collisionDetection(){
 
 function randomY(){
 
-           platformDY = Math.floor(Math.random() * 101);
+           platformDY = Math.floor(Math.random() * 40);
 
-    platformY = platformY - platformDY;
+           platformY = platformY + platformDY;
 
-        platform.style.top = platformY;
+           platform.style.top = platformY;
 
 }
