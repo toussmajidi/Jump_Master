@@ -8,7 +8,7 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
-var y = 210;
+var y = 380;
 
 var dy = 0;
 
@@ -100,18 +100,18 @@ function movePlatform() {
 function moveBall() {
 
 
-    if (bounce == true && y >= 210) {
+    if (bounce == true && y >= 380) {
         dy = -5;
     }
-    if (y > 210) {
+    if (y > 380) {
 
-        y = 210
+        y = 380
 
         dy = 0;
     }
 
 
-    if (y < 210) {
+    if (y < 380) {
 
         dy = dy + gravity;
 
