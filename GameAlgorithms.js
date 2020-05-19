@@ -33,6 +33,7 @@ var direction = "h";
 
 let id = null;
 
+let collision = false;
 
 window.addEventListener("keypress", ballJump);
 
@@ -152,9 +153,14 @@ function animate() {
 }
 
 
+function trueCollision(){
+  if(collision == true){
+      clearInterval(id);
+  }
+}
 
 function collisionDetection(){
-    if(ball.style.backgroundPositionY + ball.style.height>=platform.style.backgroundPositionY  + platform.style.height){
-        y = 290;
+    if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
+        collision = true;
     }
 }
