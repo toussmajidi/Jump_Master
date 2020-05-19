@@ -164,13 +164,9 @@ function trueCollision(){
 }
 
 function collisionDetection(){
-<<<<<<< HEAD
-    if(ball.style.backgroundPositionY = platform.style.backgroundPositionY) {
-    y = platform.stlye.backgroundPositionY;
-}
-=======
+
     if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
         collision = true;
     }
->>>>>>> origin/master
+
 }
