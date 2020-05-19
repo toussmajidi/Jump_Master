@@ -13,7 +13,9 @@ var y = 380;
 var dy = 0;
 
 
+
 var x = 1200;
+
 
 var dx = 1.2;
 
@@ -78,13 +80,14 @@ var platformDirection = "c";
 function movePlatform() {
 
 
-    if (x > 0) {
+    if (x > 100) {
 
         x = x - dx;
 
         platform.style.left = x;
 
     }
+
 
     if (x < 200) {
 
@@ -150,6 +153,7 @@ function animate() {
     movePlatform();
 
 
+
 }
 
 
@@ -160,8 +164,10 @@ function trueCollision(){
 }
 
 function collisionDetection(){
+
     if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
         debugger;
         collision = true;
     }
+
 }
