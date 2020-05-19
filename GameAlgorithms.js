@@ -8,11 +8,14 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
-var y = 290;
+var y = 210;
 
 var dy = 0;
 
-var x = 1000;
+
+
+var x = 1200;
+
 
 var dx = 1.2;
 
@@ -33,7 +36,7 @@ var direction = "h";
 let id = null;
 
 
-
+window.addEventListener("keypress", ballJump);
 
 function scroll() {
 
@@ -84,9 +87,10 @@ function movePlatform() {
 
     }
 
-    if (x < 100) {
 
-        x = 1000;
+    if (x < 200) {
+
+        x = 1200;
 
     }
 
@@ -99,18 +103,18 @@ function movePlatform() {
 function moveBall() {
 
 
-    if (bounce == true && y >= 290) {
+    if (bounce == true && y >= 210) {
         dy = -5;
     }
-    if (y > 290) {
+    if (y > 210) {
 
-        y = 290
+        y = 210
 
         dy = 0;
     }
 
 
-    if (y < 290) {
+    if (y < 210) {
 
         dy = dy + gravity;
 
@@ -152,8 +156,6 @@ function animate() {
 }
 
 
-
-window.addEventListener("keypress", ballJump);
 
 function collisionDetection(){
     if(ball.style.backgroundPositionY = platform.style.backgroundPositionY) {
