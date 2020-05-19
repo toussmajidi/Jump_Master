@@ -2,9 +2,9 @@
     margin: auto;
     border: 1px solid black;
     width: 1000px;
-    height: 280px;
+    height: 480px;
     background-color: #cccccc;
-    background-image: url("Savanah4.PNG");
+    background-image: url("Savanah7.PNG");
 }
 
 #ball {
@@ -13,7 +13,7 @@
     border-radius: 50%;
     position: absolute;
     background: red;
-    top: 210px;
+    top: 380px;
     left: 400px;
 }
 
@@ -40,7 +40,7 @@ body {
     height: 25px;
     width: 100px;
     position: absolute;
-    top: 170px;
+    top: 340px;
     right:135px;
 }
 
