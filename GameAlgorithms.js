@@ -56,16 +56,15 @@ let collision = false;
 
 var bgImg = ["Savanah7.PNG" , "cavelevel8.PNG"];
 
-function nextLevel(){
-    for(let i = 0; i < bgImg.length; i++){
-        background.style.backgroundImage = bgImg[i];
-        if(i == bgImg.length){
-            i = 0;
-        }
-    }
+let level = 0;
+let levelTimer = setInterval(changeLevel, 30000)
 
+function changeLevel() {
+   background.style.backgroundImage = "url("+bgImg[level]+")";
+   level++;
+  // Also need to increment the level
+  // This function will get called again after 30000 milliseconds...
 }
-
 window.addEventListener("keypress", ballJump);
 
 function scroll() {
