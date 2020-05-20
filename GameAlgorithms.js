@@ -60,7 +60,7 @@ let level = 0;
 let levelTimer = setInterval(changeLevel, 30000)
 
 function changeLevel() {
-   background.style.backgroundImage = "url" + (bgImg[level]);
+   background.style.backgroundImage = "url("+bgImg[level]+")";
    level++;
   // Also need to increment the level
   // This function will get called again after 30000 milliseconds...
