@@ -12,7 +12,7 @@ var pause = document.getElementById("pause");
 
 var ballX = 400;
 
-ball.style.left + ball.style.width = ballX;
+ball.style.left = ballX;
 
 var y = 380;
 
@@ -210,14 +210,12 @@ function animate() {
 
     collisionDetection();
 
+
 }
 
 
-function trueCollision() {
-    if (collision == true) {
-        clearInterval(id);
-    }
-}
+
+
 
 function collisionDetection() {
 
@@ -235,15 +233,17 @@ function collisionDetection() {
         document.getElementById("trace").innerHTML = "collision";
     }
 
-
-
-    if (ballX > platformLeft && ball.style.left < platformLeft + platform.style.width && ballY > platformTop && ball.style.top < platformBottom) {
-        collision = true;
-    }
+/*
+    if (rect1.x < rect2.x + rect2.w &&
+               rect1.x + rect1.w > rect2.x &&
+               rect1.y < rect2.y + rect2.h &&
+               rect1.y + rect1.h > rect2.y){
+                  //collision detected) {
+        ballX = 600;
+  */
+if(document.getElementById("ball").getBoundingClientRect().right >= document.getElementById("platform").getBoundingClientRect().left){
+    clearInterval(id);
 }
-
-
-
 
 }
 
