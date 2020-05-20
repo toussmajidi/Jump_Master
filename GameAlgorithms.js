@@ -18,7 +18,7 @@ var y = 380;
 
 var dy = 0;
 
-var x = 1200;
+var x = 1100;
 
 var dx = 1.2;
 
@@ -31,7 +31,7 @@ var platformX2 = 1200;
 
 var platformDX2 = 1.2;
 
-var platformY2 = 280;
+var platformY2 = 270;
 
 var platformDY2 = 0;
 
@@ -113,13 +113,20 @@ function movePlatform() {
 
     if (x < 200) {
 
-        x = 1200;
+        x = 1100;
 
         randomY();
 
     }
 
-    if (platformX2 > 100) {
+
+
+
+}
+
+function movePlatform2(){
+
+      if (platformX2 > 100) {
 
         platformX2 = platformX2 - platformDX2;
 
@@ -128,16 +135,13 @@ function movePlatform() {
     }
 
 
-    if (platformX2 < 200) {
+    if (platformX2 < 100) {
 
-        platformX2 = 1200;
+        platformX2 = 1100;
 
 
     }
-
-
 }
-
 
 
 function moveBall() {
@@ -190,6 +194,8 @@ function animate() {
     moveBall();
 
     movePlatform();
+
+    movePlatform2();
 
     collisionDetection();
 
@@ -249,9 +255,13 @@ function randomY() {
     }
     platform.style.top = platformY;
 
-    /*
 
-        platformDY2 = Math.floor(Math.random() * 40);
+
+}
+
+function randomY2(){
+
+     platformDY2 = Math.floor(Math.random() * 40);
 
     platformY2 = platformY2 + platformDY2
 
@@ -265,5 +275,5 @@ function randomY() {
 
     }
     platform2.style.top = platformY2;
-*/
+
 }
