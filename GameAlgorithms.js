@@ -54,7 +54,7 @@ let id = null;
 
 let collision = false;
 
-var bgImg = ["Savanah7.PNG" , "cavelevel8.PNG"];
+var bgImg = ["cavelevel8.PNG" , "Savanah7.PNG"];
 
 let level = 0;
 let levelTimer = setInterval(changeLevel, 30000)
@@ -62,8 +62,9 @@ let levelTimer = setInterval(changeLevel, 30000)
 function changeLevel() {
    background.style.backgroundImage = "url("+bgImg[level]+")";
    level++;
-  // Also need to increment the level
-  // This function will get called again after 30000 milliseconds...
+   if(level > bgImg.length){
+       clearInterval(id);
+   }
 }
 window.addEventListener("keypress", ballJump);
 
