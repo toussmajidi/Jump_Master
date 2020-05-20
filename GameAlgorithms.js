@@ -20,7 +20,7 @@ var dy = 0;
 
 var x = 1100;
 
-var dx = 1.2;
+var dx = 1;
 
 var platformY = 260;
 
@@ -29,7 +29,7 @@ var platformDY = 0;
 
 var platformX2 = 1200;
 
-var platformDX2 = 1.2;
+var platformDX2 = 1;
 
 var platformY2 = 275;
 
@@ -44,9 +44,11 @@ var n = 0;
 
 var bounce = false;
 
-var scrollspeed = 10;
+var scrollspeed = 5;
 
 var current = 0;
+
+var px = 1;
 
 var direction = "h";
 
@@ -64,6 +66,9 @@ let levelTimer = setInterval(changeLevel, 45000)
 function changeLevel() {
    background.style.backgroundImage = "url("+bgImg[level]+")";
    level++;
+   px++;
+   dx++;
+   platformDX2++;
    if(level > bgImg.length){
        clearInterval(id);
        clearInterval(levelTimer);
@@ -73,13 +78,17 @@ function changeLevel() {
        message.style.textAlign = "center";
        message.style.fontFamily = "fantasy";
        background.appendChild(message);
+       ball.remove();
+       platform.remove();
+       platform2.remove();
+
    }
 }
 window.addEventListener("keypress", ballJump);
 
 function scroll() {
 
-    current -= 1;
+    current -= px;
 
     if (direction == "h") {
 
@@ -185,7 +194,7 @@ function moveBall() {
 
 play.addEventListener('click', () => {
     if (id == null) {
-        id = setInterval("animate()", 5);
+        id = setInterval("animate()", scrollspeed);
         music.play();
     }
 });
@@ -208,16 +217,16 @@ function animate() {
 
     movePlatform2();
 
-    collisionDetection();
+    //collisionDetection();
 
 }
 
 
-function trueCollision() {
+/*function trueCollision() {
     if (collision == true) {
         clearInterval(id);
     }
-}
+}*/
 
 function collisionDetection(){
 
