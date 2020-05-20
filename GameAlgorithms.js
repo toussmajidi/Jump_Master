@@ -62,6 +62,9 @@ let levelTimer = setInterval(changeLevel, 30000)
 function changeLevel() {
    background.style.backgroundImage = "url("+bgImg[level]+")";
    level++;
+   if(level > bgImg.length){
+       clearInterval(id);
+   }
 }
 window.addEventListener("keypress", ballJump);
 
