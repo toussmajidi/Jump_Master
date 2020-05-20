@@ -12,7 +12,7 @@
     height: 30px;
     border-radius: 50%;
     position: absolute;
-    background: red;
+    background: green;
     top: 380px;
     left: 400px;
 }
@@ -36,11 +36,20 @@ body {
 }
 
 #platform {
-    background-color: green;
+    background-color: red;
     height: 10px;
     width: 50px;
     position: absolute;
     top: 340px;
+    left:850px;
+}
+
+#platform2 {
+    background-color: red;
+    height: 10px;
+    width: 50px;
+    position: absolute;
+    top: 120px;
     left:850px;
 }
 
