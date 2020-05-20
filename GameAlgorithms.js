@@ -12,7 +12,7 @@ var pause = document.getElementById("pause");
 
 var ballX = 400;
 
-ball.style.left = ballX;
+ball.style.left + ball.style.width = ballX;
 
 var y = 380;
 
@@ -54,24 +54,24 @@ let id = null;
 
 let collision = false;
 
-var bgImg = ["cavelevel8.PNG" , "Savanah7.PNG"];
+var bgImg = ["cavelevel8.PNG", "Savanah7.PNG"];
 
 let level = 0;
 let levelTimer = setInterval(changeLevel, 30000)
 
 function changeLevel() {
-   background.style.backgroundImage = "url("+bgImg[level]+")";
-   level++;
-   if(level > bgImg.length){
-       clearInterval(id);
-       clearInterval(levelTimer);
-       background.style.backgroundColor = "black";
-       var message = document.createElement('h1');
-       message.textContent= "GAME OVER";
-       message.style.textAlign = "center";
-       message.style.fontFamily = "fantasy";
-       background.appendChild(message);
-   }
+    background.style.backgroundImage = "url(" + bgImg[level] + ")";
+    level++;
+    if (level > bgImg.length) {
+        clearInterval(id);
+        clearInterval(levelTimer);
+        background.style.backgroundColor = "black";
+        var message = document.createElement('h1');
+        message.textContent = "GAME OVER";
+        message.style.textAlign = "center";
+        message.style.fontFamily = "fantasy";
+        background.appendChild(message);
+    }
 }
 window.addEventListener("keypress", ballJump);
 
@@ -131,9 +131,9 @@ function movePlatform() {
 
 }
 
-function movePlatform2(){
+function movePlatform2() {
 
-      if (platformX2 > 100) {
+    if (platformX2 > 100) {
 
         platformX2 = platformX2 - platformDX2;
 
@@ -215,28 +215,25 @@ function trueCollision() {
     }
 }
 
-function collisionDetection(){
+function collisionDetection() {
 
-var ballY = ball.style.top + ball.style.height;
-
-
-
-var platformLeft = platform.style.left;
-var platformTop = platform.style.top;
-var platformBottom = platform.style.top + platform.style.height;
+    var ballY = ball.style.top + ball.style.height;
+    var platformLeft = platform.style.left;
+    var platformTop = platform.style.top;
+    var platformBottom = platform.style.top + platform.style.height;
 
 
-     document.getElementById("trace").innerHTML = "ballPos=" + ballX + " platformLeft=" + platformLeft;
+    document.getElementById("trace").innerHTML = "ballPos=" + ballX + " platformLeft=" + platformLeft;
 
 
-    if (ballY == platformTop){
+    if (ballY == platformTop) {
 
         document.getElementById("trace").innerHTML = "collision";
     }
 
 
 
- if( ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
+    if (ballX > platformLeft && ball.style.left < platformLeft + platform.style.width && ballY > platformTop && ball.style.top < platformBottom) {
         collision = true;
     }
 }
@@ -267,9 +264,9 @@ function randomY() {
 
 }
 
-function randomY2(){
+function randomY2() {
 
-     platformDY2 = Math.floor(Math.random() * 40);
+    platformDY2 = Math.floor(Math.random() * 40);
 
     platformY2 = platformY2 + platformDY2
 
