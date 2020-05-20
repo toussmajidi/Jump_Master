@@ -56,8 +56,10 @@ let collision = false;
 
 var bgImg = ["cavelevel8.PNG", "Savanah7.PNG"];
 
+var music = new Audio('Game_song.mp3');
+
 let level = 0;
-let levelTimer = setInterval(changeLevel, 30000)
+let levelTimer = setInterval(changeLevel, 45000)
 
 function changeLevel() {
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
@@ -184,6 +186,7 @@ function moveBall() {
 play.addEventListener('click', () => {
     if (id == null) {
         id = setInterval("animate()", 5);
+        music.play();
     }
 });
 
@@ -191,6 +194,7 @@ pause.addEventListener('click', () => {
     if (id != null) {
         clearInterval(id);
         id = null;
+        music.pause();
     }
 });
 
