@@ -38,6 +38,18 @@ let id = null;
 
 let collision = false;
 
+var bgImg = ["Savanah7.PNG" , "cavelevel8.PNG"];
+
+function nextLevel(){
+    for(let i = 0; i < bgImg.length; i++){
+        background.style.backgroundImage = bgImg[i];
+        if(i == bgImg.length){
+            i = 0;
+        }
+    }
+
+}
+
 window.addEventListener("keypress", ballJump);
 
 function scroll() {
