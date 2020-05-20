@@ -8,7 +8,7 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
-var ballX = 50;
+var ballX = 400;
 
 ball.style.left = ballX;
 
