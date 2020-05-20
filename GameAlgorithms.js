@@ -31,7 +31,7 @@ var platformX2 = 1200;
 
 var platformDX2 = 1.2;
 
-var platformY2 = 270;
+var platformY2 = 275;
 
 var platformDY2 = 0;
 
