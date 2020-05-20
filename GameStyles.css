@@ -37,7 +37,7 @@ body {
 
 #platform {
     background-color: green;
-    height: 25px;
+    height: 10px;
     width: 50px;
     position: absolute;
     top: 340px;
@@ -48,6 +48,11 @@ body {
     text-align: center;
     top: 500px;
 
+}
+
+#trace {
+
+    color: white;
 }
 
 .PP{

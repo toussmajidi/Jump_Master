@@ -16,7 +16,7 @@ var x = 1200;
 
 var dx = 1.2;
 
-var platformY = 340;
+var platformY = 260;
 
 var platformDY = 0;
 
@@ -155,6 +155,7 @@ function animate() {
 
     movePlatform();
 
+    collisionDetection();
 
 }
 
@@ -166,23 +167,49 @@ function trueCollision() {
 }
 
 function collisionDetection(){
- if(ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
+
+var ballX = ball.style.left +"px";
+var ballY = ball.style.top + ball.style.height;
+
+
+
+var platformLeft = platform.style.left;
+var platformTop = platform.style.top;
+var platformBottom = platform.style.top + platform.style.height;
+
+
+     document.getElementById("trace").innerHTML = "ballPos=" + ballX + " platformLeft=" + platformLeft;
+
+
+    if (ballY == platformTop){
+
+        document.getElementById("trace").innerHTML = "collision";
+    }
+
+
+/*
+ if( ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
         collision = true;
     }
+}
+
+*/
+
 }
 
 function randomY() {
 
     platformDY = Math.floor(Math.random() * 40);
 
+    platformY = platformY + platformDY
 
-    if (platformY < 10) {
-        platformY = platformY - platformDY;
+    if (platformY < 260) {
+        platformY = 260;
 
     }
 
-    if (platformY > 40) {
-        platformY = platformY + platformDY;
+    if (platformY > 380) {
+        platformY = 380;
 
     }
     platform.style.top = platformY;
