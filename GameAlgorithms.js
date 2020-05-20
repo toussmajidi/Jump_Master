@@ -8,6 +8,10 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
+var ballX = 50;
+
+ball.style.left = ballX;
+
 var y = 380;
 
 var dy = 0;
@@ -180,7 +184,7 @@ function trueCollision() {
 
 function collisionDetection(){
 
-var ballX = ball.style.left +"px";
+var ballX = ball.style.left;
 var ballY = ball.style.top + ball.style.height;
 
 
