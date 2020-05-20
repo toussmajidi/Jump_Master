@@ -2,6 +2,8 @@ var background = document.getElementById("background");
 
 var platform = document.getElementById("platform");
 
+var platform2 = document.getElementById("platform2");
+
 var ball = document.getElementById("ball");
 
 var play = document.getElementById("play");
@@ -23,6 +25,16 @@ var dx = 1.2;
 var platformY = 260;
 
 var platformDY = 0;
+
+
+var platformX2 = 1200;
+
+var platformDX2 = 1.2;
+
+var platformY2 = 280;
+
+var platformDY2 = 0;
+
 
 var gravity = 0.1;
 
@@ -86,13 +98,6 @@ function ballJump(event) {
 }
 
 
-
-var platformCurrent = 0;
-
-var platformDirection = "c";
-
-
-
 function movePlatform() {
 
 
@@ -113,6 +118,21 @@ function movePlatform() {
 
     }
 
+    if (platformX2 > 100) {
+
+        platformX2 = platformX2 - platformDX2;
+
+        platform2.style.left = platformX2;
+
+    }
+
+
+    if (platformX2 < 200) {
+
+        platformX2 = 1200;
+
+
+    }
 
 
 }
@@ -183,7 +203,6 @@ function trueCollision() {
 
 function collisionDetection(){
 
-var ballX = ball.style.left;
 var ballY = ball.style.top + ball.style.height;
 
 
@@ -202,8 +221,8 @@ var platformBottom = platform.style.top + platform.style.height;
     }
 
 
-/*
- if( ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
+
+ /*if( ball.style.left + ball.style.width > platform.style.left && ball.style.left < platform.style.left + platform.style.width && ball.style.top + ball.style.height > platform.style.top && ball.style.top < platform.style.top + platform.style.height){
         collision = true;
     }
 }
@@ -229,4 +248,21 @@ function randomY() {
     }
     platform.style.top = platformY;
 
+    /*
+
+        platformDY2 = Math.floor(Math.random() * 40);
+
+    platformY2 = platformY2 + platformDY2
+
+    if (platformY2 < 260) {
+        platformY2 = 260;
+
+    }
+
+    if (platformY2 > 380) {
+        platformY2 = 380;
+
+    }
+    platform2.style.top = platformY2;
+*/
 }
