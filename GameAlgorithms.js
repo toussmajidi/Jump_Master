@@ -64,6 +64,13 @@ function changeLevel() {
    level++;
    if(level > bgImg.length){
        clearInterval(id);
+       clearInterval(levelTimer);
+       background.style.backgroundColor = "black";
+       var message = document.createElement('h1');
+       message.textContent= "GAME OVER";
+       message.style.textAlign = "center";
+       message.style.fontFamily = "fantasy";
+       background.appendChild(message);
    }
 }
 window.addEventListener("keypress", ballJump);
