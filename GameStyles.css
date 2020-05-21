@@ -97,3 +97,11 @@ body {
   box-shadow: 0 4px #666;
   transform: translateY(3px);
 }
+#newBg{
+    margin: auto;
+    width: 1000px;
+    height: 480px;
+    background-color: rgba(0,0,0,0);
+    top: 0px;
+    z-index: 9;
+}
