@@ -56,7 +56,7 @@ let id = null;
 
 let collision = false;
 
-var bgImg = ["cavelevel8.PNG", "Savanah7.PNG"];
+var bgImg = ["cavelevel8.PNG", "grasslevel4"];
 
 var music = new Audio('Game_song.mp3');
 
