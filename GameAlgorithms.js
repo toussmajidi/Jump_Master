@@ -59,6 +59,7 @@ let collision = false;
 var bgImg = ["cavelevel8.PNG", "grasslevel4"];
 
 var music = new Audio('Game_song.mp3');
+var soundEffect = new Audio('sound_effect.mp3');
 
 let level = 0;
 
@@ -223,6 +224,7 @@ pause.addEventListener('click', () => {
         clearInterval(id);
         id = null;
         music.pause();
+        soundEffect.pause();
     }
 });
 
@@ -268,6 +270,7 @@ function collisionDetection() {
         clearInterval(id);
         clearInterval(levelTimer);
         music.pause();
+        soundEffect.play();
         gameOver();
     }
 
