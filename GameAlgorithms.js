@@ -148,7 +148,7 @@ function movePlatform2() {
     }
 
 
-    if (platformX2 < 100) {
+    if (platformX2 < 200) {
 
         platformX2 = 1100;
 
@@ -165,7 +165,7 @@ function moveBall() {
     }
     if (y > 380) {
 
-        y = 380
+        y = 380;
 
         dy = 0;
     }
@@ -251,7 +251,7 @@ function randomY() {
 
     platformDY = Math.floor(Math.random() * 40);
 
-    platformY = platformY + platformDY
+    platformY = platformY + platformDY;
 
     if (platformY < 260) {
         platformY = 260;
@@ -272,7 +272,7 @@ function randomY2() {
 
     platformDY2 = Math.floor(Math.random() * 40);
 
-    platformY2 = platformY2 + platformDY2
+    platformY2 = platformY2 + platformDY2;
 
     if (platformY2 < 260) {
         platformY2 = 260;
