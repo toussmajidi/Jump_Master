@@ -98,7 +98,7 @@ function congratulations() {
 
 }
 
-function gameOver{
+function gameOver(){
     var newBg = document.createElement('div');
     var gameOver = document.createElement('h1');
     var container = document.getElementById("container");
