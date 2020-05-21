@@ -212,14 +212,14 @@ function moveBall() {
 
 }
 
-play.addEventListener('click', () => {
+play.addEventListener('mousedown', () => {
     if (id == null) {
         id = setInterval("animate()", scrollspeed);
         music.play();
     }
 });
 
-pause.addEventListener('click', () => {
+pause.addEventListener('mousedown', () => {
     if (id != null) {
         clearInterval(id);
         id = null;
