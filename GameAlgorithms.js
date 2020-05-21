@@ -103,11 +103,7 @@ function scroll() {
 
 }
 
-
-
 function ballJump(event) {
-
-
 
     if (event.keyCode == 32) {
 
@@ -117,9 +113,7 @@ function ballJump(event) {
 
 }
 
-
 function movePlatform() {
-
 
     if (x > 100) {
 
@@ -129,7 +123,6 @@ function movePlatform() {
 
     }
 
-
     if (x < 200) {
 
         x = 1100;
@@ -137,9 +130,6 @@ function movePlatform() {
         randomY();
 
     }
-
-
-
 
 }
 
