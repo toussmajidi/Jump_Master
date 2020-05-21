@@ -68,6 +68,9 @@ function changeLevel() {
 
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
+    px++;
+    dx++;
+    platformDX2++;
     if (level > bgImg.length) {
         clearInterval(id);
         clearInterval(levelTimer);
@@ -76,6 +79,8 @@ function changeLevel() {
         message.textContent = "GAME OVER";
         message.style.textAlign = "center";
         message.style.fontFamily = "fantasy";
+        message.style.color = "red";
+        message.style.verticalAlign = "middle";
         background.appendChild(message);
     }
 }
@@ -237,12 +242,13 @@ function collisionDetection() {
 
 
     if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
-               ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
-               ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
-               ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top){
+        ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
+        ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
+        ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top) {
 
-       clearInterval(id);
-}
+        clearInterval(id);
+        music.pause();
+    }
 
 
 }
