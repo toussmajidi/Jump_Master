@@ -61,7 +61,8 @@ var bgImg = ["cavelevel8.PNG", "Savanah7.PNG"];
 var music = new Audio('Game_song.mp3');
 
 let level = 0;
-let levelTimer = setInterval(changeLevel, 45000)
+
+let levelTimer = setInterval(changeLevel, 45000);
 
 function changeLevel() {
 
@@ -170,7 +171,7 @@ function moveBall() {
     }
     if (y > 380) {
 
-        y = 380
+        y = 380;
 
         dy = 0;
     }
@@ -257,7 +258,7 @@ function randomY() {
 
     platformDY = Math.floor(Math.random() * 40);
 
-    platformY = platformY + platformDY
+    platformY = platformY + platformDY;
 
     if (platformY < 260) {
         platformY = 260;
@@ -278,7 +279,7 @@ function randomY2() {
 
     platformDY2 = Math.floor(Math.random() * 40);
 
-    platformY2 = platformY2 + platformDY2
+    platformY2 = platformY2 + platformDY2;
 
     if (platformY2 < 260) {
         platformY2 = 260;
