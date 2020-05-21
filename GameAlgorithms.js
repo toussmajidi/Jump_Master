@@ -188,7 +188,7 @@ function movePlatform2() {
     }
 
 
-    if (platformX2 < 100) {
+    if (platformX2 < 200) {
 
         platformX2 = 1100;
 
