@@ -65,26 +65,60 @@ let level = 0;
 let levelTimer = setInterval(changeLevel, 45000);
 
 function changeLevel() {
-
-
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
     px++;
     dx++;
     platformDX2++;
+
     if (level > bgImg.length) {
         clearInterval(id);
         clearInterval(levelTimer);
-        background.style.backgroundColor = "black";
-        var message = document.createElement('h1');
-        message.textContent = "GAME OVER";
-        message.style.textAlign = "center";
-        message.style.fontFamily = "fantasy";
-        message.style.color = "red";
-        message.style.verticalAlign = "middle";
-        background.appendChild(message);
+        congratulations();
     }
 }
+
+function congratulations() {
+    var message = document.createElement('h1');
+
+    background.style.backgroundColor = "black";
+
+    message.textContent = "CONGRATULATIONS! YOU FINISHED!";
+    message.style.textAlign = "center";
+    message.style.fontFamily = "fantasy";
+    message.style.color = "green";
+    message.style.verticalAlign = "middle";
+
+    background.appendChild(message);
+
+    platform.remove();
+    platform2.remove();
+    ball.remove();
+
+
+}
+
+function gameOver{
+    var newBg = document.createElement('div');
+    var gameOver = document.createElement('h1');
+    var container = document.getElementById("container");
+
+    message.textContent = "GAME OVER";
+    message.style.textAlign = "center";
+    message.style.fontFamily = "fantasy";
+    message.style.color = "red";
+    message.style.verticalAlign = "middle";
+
+    newBg.style.position = "absolute";
+    newBg.style.top = background.style.top;
+    newBg.style.left = background.style.left;
+    newBg.style.zIndex = "5";
+    newBg.backgroundColor = "rgba(0, 0, 0, 0.6)";
+
+    background.appendChild(newBg);
+    newBg.appendChild(gameOver);
+}
+
 window.addEventListener("keypress", ballJump);
 
 function scroll() {
@@ -248,7 +282,9 @@ function collisionDetection() {
         ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top) {
 
         clearInterval(id);
+        clearInterval(levelTimer);
         music.pause();
+        gameOver();
     }
 
 
