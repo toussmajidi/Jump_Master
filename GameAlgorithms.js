@@ -98,25 +98,19 @@ function congratulations() {
 
 }
 
-function gameOver{
-    var newBg = document.createElement('div');
+function gameOver(){
     var gameOver = document.createElement('h1');
-    var container = document.getElementById("container");
+    var newBg = document.getElementById("newBg");
 
-    message.textContent = "GAME OVER";
-    message.style.textAlign = "center";
-    message.style.fontFamily = "fantasy";
-    message.style.color = "red";
-    message.style.verticalAlign = "middle";
+    gameOver.textContent = "GAME OVER";
+    gameOver.style.textAlign = "center";
+    gameOver.style.fontFamily = "fantasy";
+    gameOver.style.color = "red";
+    gameOver.style.verticalAlign = "middle";
 
-    newBg.style.position = "absolute";
-    newBg.style.top = background.style.top;
-    newBg.style.left = background.style.left;
-    newBg.style.zIndex = "5";
-    newBg.backgroundColor = "rgba(0, 0, 0, 0.6)";
-
-    background.appendChild(newBg);
+    newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
     newBg.appendChild(gameOver);
+
 }
 
 window.addEventListener("keypress", ballJump);
@@ -143,7 +137,7 @@ function ballJump(event) {
 
 
 
-    if (event.keyCode == 32) {
+    if (event.keyCode === 32) {
 
         bounce = true;
 
