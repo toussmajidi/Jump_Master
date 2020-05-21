@@ -64,27 +64,8 @@ let level = 0;
 let levelTimer = setInterval(changeLevel, 45000)
 
 function changeLevel() {
-<<<<<<< HEAD
-   background.style.backgroundImage = "url("+bgImg[level]+")";
-   level++;
-   px++;
-   dx++;
-   platformDX2++;
-   if(level > bgImg.length){
-       clearInterval(id);
-       clearInterval(levelTimer);
-       background.style.backgroundColor = "black";
-       var message = document.createElement('h1');
-       message.textContent= "GAME OVER";
-       message.style.textAlign = "center";
-       message.style.fontFamily = "fantasy";
-       background.appendChild(message);
-       ball.remove();
-       platform.remove();
-       platform2.remove();
 
-   }
-=======
+
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
     if (level > bgImg.length) {
@@ -97,7 +78,6 @@ function changeLevel() {
         message.style.fontFamily = "fantasy";
         background.appendChild(message);
     }
->>>>>>> origin/master
 }
 window.addEventListener("keypress", ballJump);
 
@@ -255,17 +235,15 @@ function collisionDetection() {
         document.getElementById("trace").innerHTML = "collision";
     }
 
-/*
-    if (rect1.x < rect2.x + rect2.w &&
-               rect1.x + rect1.w > rect2.x &&
-               rect1.y < rect2.y + rect2.h &&
-               rect1.y + rect1.h > rect2.y){
-                  //collision detected) {
-        ballX = 600;
-  */
-if(document.getElementById("ball").getBoundingClientRect().right >= document.getElementById("platform").getBoundingClientRect().left){
-    clearInterval(id);
+
+    if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
+               ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
+               ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
+               ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top){
+
+       clearInterval(id);
 }
+
 
 }
 
