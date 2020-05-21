@@ -99,24 +99,19 @@ function congratulations() {
 }
 
 function gameOver(){
-    var newBg = document.createElement('div');
+
     var gameOver = document.createElement('h1');
-    var container = document.getElementById("container");
+    var newBg = document.getElementById("newBg");
 
-    message.textContent = "GAME OVER";
-    message.style.textAlign = "center";
-    message.style.fontFamily = "fantasy";
-    message.style.color = "red";
-    message.style.verticalAlign = "middle";
+    gameOver.textContent = "GAME OVER";
+    gameOver.style.textAlign = "center";
+    gameOver.style.fontFamily = "fantasy";
+    gameOver.style.color = "red";
+    gameOver.style.verticalAlign = "middle";
 
-    newBg.style.position = "absolute";
-    newBg.style.top = background.style.top;
-    newBg.style.left = background.style.left;
-    newBg.style.zIndex = "5";
-    newBg.backgroundColor = "rgba(0, 0, 0, 0.6)";
-
-    background.appendChild(newBg);
+    newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
     newBg.appendChild(gameOver);
+
 }
 
 window.addEventListener("keypress", ballJump);
@@ -139,7 +134,10 @@ function scroll() {
 
 function ballJump(event) {
 
-    if (event.keyCode == 32) {
+
+
+
+    if (event.keyCode === 32) {
 
         bounce = true;
 
@@ -277,6 +275,17 @@ function collisionDetection() {
         gameOver();
     }
 
+      if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
+        ball.getBoundingClientRect().right > platform2.getBoundingClientRect().left &&
+        ball.getBoundingClientRect().top < platform2.getBoundingClientRect().bottom &&
+        ball.getBoundingClientRect().bottom > platform2.getBoundingClientRect().top) {
+
+        clearInterval(id);
+        clearInterval(levelTimer);
+        music.pause();
+        gameOver();
+    }
+
 
 }
 
@@ -301,7 +310,7 @@ function randomY() {
 
 }
 
-function randomY2() {
+/*function randomY2() {
 
     platformDY2 = Math.floor(Math.random() * 40);
 
@@ -319,3 +328,4 @@ function randomY2() {
     platform2.style.top = platformY2;
 
 }
+*/
