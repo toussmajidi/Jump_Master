@@ -56,9 +56,10 @@ let id = null;
 
 let collision = false;
 
-var bgImg = ["cavelevel8.PNG", "Savanah7.PNG"];
+var bgImg = ["cavelevel8.PNG", "grasslevel4"];
 
 var music = new Audio('Game_song.mp3');
+var soundEffect = new Audio('sound_effect.mp3');
 
 let level = 0;
 
@@ -109,7 +110,8 @@ function gameOver(){
     gameOver.style.color = "red";
     gameOver.style.verticalAlign = "middle";
 
-    newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
+    newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+
     newBg.appendChild(gameOver);
 
 }
@@ -215,18 +217,19 @@ function moveBall() {
 
 }
 
-play.addEventListener('click', () => {
+play.addEventListener('mousedown', () => {
     if (id == null) {
         id = setInterval("animate()", scrollspeed);
         music.play();
     }
 });
 
-pause.addEventListener('click', () => {
+pause.addEventListener('mousedown', () => {
     if (id != null) {
         clearInterval(id);
         id = null;
         music.pause();
+        soundEffect.pause();
     }
 });
 
@@ -272,6 +275,7 @@ function collisionDetection() {
         clearInterval(id);
         clearInterval(levelTimer);
         music.pause();
+        soundEffect.play();
         gameOver();
     }
 
