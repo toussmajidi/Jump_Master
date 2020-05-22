@@ -3,13 +3,23 @@ body {
 }
 
 
-h1 {
+#Title {
     text-align: center;
     text-decoration: underline;
     color: darkgreen;
     font-family: blippo, fantasy;
     font-size: 100px;
 }
+
+
+h2{
+       text-align: center;
+    color: orangered;
+    font-family: fantasy;
+    font-size: 45px;
+    top:90%;
+}
+
 h3 {
     text-align: center;
     color: black;
@@ -96,7 +106,8 @@ h3 {
 .right_dropdown {
     position: relative;
     float: right;
-    margin-right: 20%;
+    margin-right: 45.75%;
+    top:5%;
 }
 
 /* Dropdown Content (Hidden by Default) */

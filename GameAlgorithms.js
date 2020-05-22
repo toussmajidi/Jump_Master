@@ -330,6 +330,7 @@ function randomY2() {
 var restart = document.createElement("button");
 var container = document.getElementById("container");
 
+
 restart.style.backgroundColor = "red";
 restart.classList.add("PP");
 restart.textContent = "RESTART";
