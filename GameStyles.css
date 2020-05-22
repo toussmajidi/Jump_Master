@@ -94,3 +94,10 @@ body {
     top: 9.5px;
     z-index: 9;
 }
+
+#score {
+    text-align: center;
+    color: black;
+    font-family: fantasy;
+    font-size: 40px;
+}

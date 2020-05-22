@@ -72,6 +72,8 @@ let level = 0;
 
 let levelTimer = null;
 
+var score = 0;
+
 function changeLevel() {
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
@@ -169,6 +171,8 @@ function movePlatform() {
 
         randomY();
 
+        score++;
+
     }
 
 }
@@ -187,6 +191,8 @@ function movePlatform2() {
     if (platformX2 < 200) {
 
         platformX2 = 1100;
+
+        score++;
 
 
     }
@@ -255,9 +261,9 @@ function animate() {
 
     collisionDetection();
 
+    document.getElementById("score").innerHTML = "Score " + score;
+
 }
-
-
 
 
 function collisionDetection() {
@@ -272,6 +278,22 @@ function collisionDetection() {
         ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
         ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
         ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top) {
+
+        clearInterval(id);
+        clearInterval(levelTimer);
+        music.pause();
+        soundEffect.play();
+        gameOver();
+
+        play.remove();
+        pause.remove();
+        container.appendChild(restart);
+    }
+
+    if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
+        ball.getBoundingClientRect().right > platform2.getBoundingClientRect().left &&
+        ball.getBoundingClientRect().top < platform2.getBoundingClientRect().bottom &&
+        ball.getBoundingClientRect().bottom > platform2.getBoundingClientRect().top) {
 
         clearInterval(id);
         clearInterval(levelTimer);
