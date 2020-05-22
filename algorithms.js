@@ -1,8 +1,8 @@
 $(function () {
     var body = $('body');
     var backgrounds = [
-      'url(https://www.mobygames.com/images/shots/l/755414-geometry-dash-android-screenshot-flying-in-a-short-sequence.jpg)',
-      'url(https://gamehelp.guru/wp-content/uploads/2016/01/Geometry-Dash-Screenshot-1.jpg)'];
+      'url(Screenshot1.png)',
+      'url(Screenshot2.png)'];
     var current = 0;
 
     function nextBackground() {

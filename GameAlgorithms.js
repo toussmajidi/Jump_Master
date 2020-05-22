@@ -107,7 +107,6 @@ function congratulations() {
 }
 
 function gameOver(){
-
     var gameOver = document.createElement('h1');
     var newBg = document.getElementById("newBg");
 
@@ -120,7 +119,6 @@ function gameOver(){
     newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
 
     newBg.appendChild(gameOver);
-
 }
 
 window.addEventListener("keypress", ballJump);
@@ -143,10 +141,7 @@ function scroll() {
 
 function ballJump(event) {
 
-
-
-
-    if (event.keyCode === 32) {
+    if (event.keyCode == 32) {
 
         bounce = true;
 
@@ -282,17 +277,6 @@ function collisionDetection() {
         container.appendChild(restart);
     }
 
-      if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
-        ball.getBoundingClientRect().right > platform2.getBoundingClientRect().left &&
-        ball.getBoundingClientRect().top < platform2.getBoundingClientRect().bottom &&
-        ball.getBoundingClientRect().bottom > platform2.getBoundingClientRect().top) {
-
-        clearInterval(id);
-        clearInterval(levelTimer);
-        music.pause();
-        gameOver();
-    }
-
 
 }
 
@@ -317,7 +301,7 @@ function randomY() {
 
 }
 
-/*function randomY2() {
+function randomY2() {
 
     platformDY2 = Math.floor(Math.random() * 40);
 
@@ -335,9 +319,6 @@ function randomY() {
     platform2.style.top = platformY2;
 
 }
-<<<<<<< HEAD
-*/
-=======
 
     var restart = document.createElement("button");
     var container = document.getElementById("container");
@@ -345,5 +326,3 @@ function randomY() {
     restart.style.backgroundColor = "red";
     restart.classList.add("PP");
     restart.textContent = "RESTART";
-
->>>>>>> origin/master

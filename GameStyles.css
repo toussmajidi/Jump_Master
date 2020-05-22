@@ -17,19 +17,6 @@
     left: 400px;
 }
 
-h1 {
-    text-align: center;
-    color: darkgreen;
-    font-family: fantasy;
-    font-size: 50px;
-}
-
-h2 {
-    text-align: center;
-    color: orangered;
-    font-family: fantasy;
-    font-size: 45px;
-}
 
 body {
     background-image: url("nightSky.png");
