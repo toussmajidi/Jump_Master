@@ -27,7 +27,7 @@ h3 {
     font-size: 40px;
 }
 
-.ready {
+#ready {
     display: block;
     top: 200px;
     margin: auto;
@@ -40,9 +40,9 @@ h3 {
     outline: none;
     box-shadow: 0 9px #999;
 }
-.ready:hover {background-color: rgba(0, 0, 0, 0.85);}
+#ready:hover {background-color: rgba(0, 0, 0, 0.85);}
 
-.ready:active {
+#ready:active {
   background-color: rgba(0, 0, 0, 1);
   box-shadow: 0 4px #666;
   transform: translateY(3px);

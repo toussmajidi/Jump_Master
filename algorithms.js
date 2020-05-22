@@ -15,3 +15,10 @@ $(function () {
     setTimeout(nextBackground, 5000);
     body.css('background', backgrounds[0]);
 });
+
+var ready = document.getElementById("ready");
+
+ready.addEventListener('click', () => {
+    document.location.href = "Game_Screen.html";
+    ready.blur();
+});
