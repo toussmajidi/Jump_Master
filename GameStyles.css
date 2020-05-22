@@ -28,7 +28,7 @@ body {
     width: 30px;
     position: absolute;
     top: 340px;
-    left:850px;
+    left: 850px;
 }
 
 #platform2 {
@@ -37,10 +37,10 @@ body {
     width: 30px;
     position: absolute;
     top: 380px;
-    left:950px;
+    left: 950px;
 }
 
-#container{
+#container {
     text-align: center;
     top: 500px;
 
@@ -51,8 +51,8 @@ body {
     color: white;
 }
 
-.PP{
-    display:inline;
+.PP {
+    display: inline;
     border-radius: 12px;
     color: white;
     padding: 16px 18px;
@@ -62,37 +62,61 @@ body {
     box-shadow: 0 9px #999;
 }
 
-.PP:active{
-  box-shadow: 0 4px #666;
-  transform: translateY(3px);
+.PP:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(3px);
 }
 
-#play{
+#play {
     background-color: lime;
 }
-#pause{
+
+#pause {
     background-color: orange;
 }
 
-#play:hover {background-color: lawngreen;}
+#play:hover {
+    background-color: lawngreen;
+}
 
 #play:active {
-  background-color: limegreen;
+    background-color: limegreen;
 }
 
-#pause:hover {background-color: darkorange;}
+#pause:hover {
+    background-color: darkorange;
+}
 
 #pause:active {
-  background-color: orangered;
+    background-color: orangered;
 }
-#newBg{
+
+#newBg {
     margin: auto;
     position: absolute;
     width: 1000px;
     height: 480px;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     top: 9.5px;
     z-index: 9;
+}
+
+
+
+
+#back {
+    background-color: darkgray;
+    position: absolute;
+    top: 0px;
+    left 0px;
+}
+#back:hover {
+    background-color: gray;
+}
+
+#back:active {
+    background-color: dimgray;
+
 }
 
 #score {
@@ -100,4 +124,3 @@ body {
     color: black;
     font-family: fantasy;
     font-size: 40px;
-}
