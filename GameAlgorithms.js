@@ -70,7 +70,7 @@ var soundEffect = new Audio('sound_effect.mp3');
 
 let level = 0;
 
-let levelTimer = setInterval(changeLevel, 45000);
+let levelTimer = null;
 
 function changeLevel() {
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
@@ -103,10 +103,14 @@ function congratulations() {
     platform2.remove();
     ball.remove();
 
+    play.remove();
+    pause.remove();
+    container.appendChild(restart);
+
 
 }
 
-function gameOver(){
+function gameOver() {
     var gameOver = document.createElement('h1');
     var newBg = document.getElementById("newBg");
 
@@ -219,17 +223,20 @@ function moveBall() {
 
 }
 play.addEventListener('click', () => {
-    if (id == null) {
+    if (id == null && levelTimer == null) {
         id = setInterval("animate()", scrollspeed);
+        levelTimer = setInterval(changeLevel, 45000);
         music.play();
     }
     play.blur();
 });
 
 pause.addEventListener('click', () => {
-    if (id != null) {
+    if (id != null && levelTimer != null) {
         clearInterval(id);
+        clearInterval(levelTimer);
         id = null;
+        levelTimer = null;
         music.pause();
         soundEffect.pause();
     }
@@ -320,9 +327,16 @@ function randomY2() {
 
 }
 
-    var restart = document.createElement("button");
-    var container = document.getElementById("container");
+var restart = document.createElement("button");
+var container = document.getElementById("container");
 
-    restart.style.backgroundColor = "red";
-    restart.classList.add("PP");
-    restart.textContent = "RESTART";
+
+restart.style.backgroundColor = "red";
+restart.classList.add("PP");
+restart.textContent = "RESTART";
+
+restart.addEventListener('click', () => {
+    document.location.href = "";
+    restart.blur();
+    id = null;
+});
