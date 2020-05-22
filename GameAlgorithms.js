@@ -10,6 +10,12 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
+var green = document.getElementById("green");
+
+var blue = document.getElementById("blue");
+
+var yellow = document.getElementById("yellow");
+
 var ballX = 400;
 
 ball.style.left = ballX;
@@ -59,6 +65,7 @@ let collision = false;
 var bgImg = ["cavelevel8.PNG", "grasslevel4"];
 
 var music = new Audio('Game_song.mp3');
+
 var soundEffect = new Audio('sound_effect.mp3');
 
 let level = 0;
@@ -216,21 +223,22 @@ function moveBall() {
 
 
 }
-
-play.addEventListener('mousedown', () => {
+play.addEventListener('click', () => {
     if (id == null) {
         id = setInterval("animate()", scrollspeed);
         music.play();
     }
+    play.blur();
 });
 
-pause.addEventListener('mousedown', () => {
+pause.addEventListener('click', () => {
     if (id != null) {
         clearInterval(id);
         id = null;
         music.pause();
         soundEffect.pause();
     }
+    pause.blur();
 });
 
 function animate() {
@@ -258,15 +266,6 @@ function collisionDetection() {
     var platformBottom = platform.style.top + platform.style.height;
 
 
-    document.getElementById("trace").innerHTML = "ballPos=" + ballX + " platformLeft=" + platformLeft;
-
-
-    if (ballY == platformTop) {
-
-        document.getElementById("trace").innerHTML = "collision";
-    }
-
-
     if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
         ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
         ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
@@ -277,6 +276,10 @@ function collisionDetection() {
         music.pause();
         soundEffect.play();
         gameOver();
+
+        play.remove();
+        pause.remove();
+        container.appendChild(restart);
     }
 
       if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
@@ -332,4 +335,15 @@ function randomY() {
     platform2.style.top = platformY2;
 
 }
+<<<<<<< HEAD
 */
+=======
+
+    var restart = document.createElement("button");
+    var container = document.getElementById("container");
+
+    restart.style.backgroundColor = "red";
+    restart.classList.add("PP");
+    restart.textContent = "RESTART";
+
+>>>>>>> origin/master
