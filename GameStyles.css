@@ -12,7 +12,7 @@
     height: 30px;
     border-radius: 50%;
     position: absolute;
-    background: green;
+    background-color: green;
     top: 380px;
     left: 400px;
 }

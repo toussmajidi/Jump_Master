@@ -10,6 +10,12 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
+var green = document.getElementById("green");
+
+var blue = document.getElementById("blue");
+
+var yellow = document.getElementById("yellow");
+
 var ballX = 400;
 
 ball.style.left = ballX;
@@ -59,6 +65,7 @@ let collision = false;
 var bgImg = ["cavelevel8.PNG", "grasslevel4"];
 
 var music = new Audio('Game_song.mp3');
+
 var soundEffect = new Audio('sound_effect.mp3');
 
 let level = 0;
@@ -316,3 +323,8 @@ function randomY2() {
     platform2.style.top = platformY2;
 
 }
+
+green.addEventListener('click' , () => {
+    ball.style.backgroundColor = "yellow";
+
+});
