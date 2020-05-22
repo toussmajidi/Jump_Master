@@ -219,11 +219,11 @@ function moveBall() {
 
 }
 play.addEventListener('click', () => {
-    play.blur();
     if (id == null) {
         id = setInterval("animate()", scrollspeed);
         music.play();
     }
+    play.blur();
 });
 
 pause.addEventListener('click', () => {
@@ -233,6 +233,7 @@ pause.addEventListener('click', () => {
         music.pause();
         soundEffect.pause();
     }
+    pause.blur();
 });
 
 function animate() {
@@ -260,15 +261,6 @@ function collisionDetection() {
     var platformBottom = platform.style.top + platform.style.height;
 
 
-    document.getElementById("trace").innerHTML = "ballPos=" + ballX + " platformLeft=" + platformLeft;
-
-
-    if (ballY == platformTop) {
-
-        document.getElementById("trace").innerHTML = "collision";
-    }
-
-
     if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
         ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
         ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
@@ -279,6 +271,10 @@ function collisionDetection() {
         music.pause();
         soundEffect.play();
         gameOver();
+
+        play.remove();
+        pause.remove();
+        container.appendChild(restart);
     }
 
 
@@ -324,7 +320,10 @@ function randomY2() {
 
 }
 
-green.addEventListener('click' , () => {
-    ball.style.backgroundColor = "yellow";
+    var restart = document.createElement("button");
+    var container = document.getElementById("container");
 
-});
+    restart.style.backgroundColor = "red";
+    restart.classList.add("PP");
+    restart.textContent = "RESTART";
+
