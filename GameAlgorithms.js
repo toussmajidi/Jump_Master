@@ -340,3 +340,10 @@ restart.addEventListener('click', () => {
     restart.blur();
     id = null;
 });
+
+var back = document.getElementById("back");
+
+back.addEventListener('click', () => {
+    document.location.href = "index.html";
+    back.blur();
+})
