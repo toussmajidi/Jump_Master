@@ -211,15 +211,15 @@ function moveBall() {
 
 
 }
-
-play.addEventListener('mousedown', () => {
+play.addEventListener('click', () => {
+    play.blur();
     if (id == null) {
         id = setInterval("animate()", scrollspeed);
         music.play();
     }
 });
 
-pause.addEventListener('mousedown', () => {
+pause.addEventListener('click', () => {
     if (id != null) {
         clearInterval(id);
         id = null;
