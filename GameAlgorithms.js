@@ -177,7 +177,7 @@ function movePlatform() {
 
     if (x < 130) {
 
-        x = 1300;
+        x = 1150;
 
         randomY();
 
@@ -200,7 +200,7 @@ function movePlatform2() {
 
     if (platformX2 < 130) {
 
-        platformX2 = 1300;
+        platformX2 = 1150;
 
         score++;
 
