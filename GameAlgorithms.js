@@ -10,6 +10,10 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
+var screenWidth = window.innerWidth;
+
+var limit = screenWidth - (1000 + ((screenWidth - 1000)/2));
+
 var ballX = 400;
 
 ball.style.left = ballX;
@@ -169,9 +173,9 @@ function movePlatform() {
 
     }
 
-    if (x < 140) {
+    if (x < limit) {
 
-        x = 1150;
+        x = screenWidth - (screenWidth - 1000)/2;
 
         randomY();
 
@@ -192,9 +196,9 @@ function movePlatform2() {
     }
 
 
-    if (platformX2 < 140) {
+    if (platformX2 < limit) {
 
-        platformX2 = 1150;
+        platformX2 = screenWidth - (screenWidth - 1000)/2;
 
         score++;
 
