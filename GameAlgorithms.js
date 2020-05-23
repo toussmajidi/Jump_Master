@@ -96,7 +96,7 @@ function congratulations() {
     message.textContent = "CONGRATULATIONS! YOU FINISHED!";
     message.style.textAlign = "center";
     message.style.fontFamily = "fantasy";
-    message.style.color = "green";
+    message.style.color = "orange";
     message.style.verticalAlign = "middle";
 
     background.appendChild(message);
@@ -108,6 +108,10 @@ function congratulations() {
     play.remove();
     pause.remove();
     container.appendChild(restart);
+
+    scoreElement.remove();
+    baclground.appendChild(scoreElement);
+    scoreElement.style.color = "green";
 
 
 }
