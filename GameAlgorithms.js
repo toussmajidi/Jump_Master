@@ -42,10 +42,6 @@ var platformDY2 = 0;
 
 var gravity = 0.1;
 
-var boxes = [];
-
-var n = 0;
-
 var bounce = false;
 
 var scrollspeed = 5;
@@ -336,26 +332,6 @@ function randomY() {
     platformY = platformY + platformDY;
     platform.style.top = platformY;
 
-
-
-}
-
-function randomY2() {
-
-    platformDY2 = Math.floor(Math.random() * 40);
-
-    platformY2 = platformY2 + platformDY2;
-
-    if (platformY2 < 260) {
-        platformY2 = 260;
-
-    }
-
-    if (platformY2 > 380) {
-        platformY2 = 380;
-
-    }
-    platform2.style.top = platformY2;
 
 }
 
