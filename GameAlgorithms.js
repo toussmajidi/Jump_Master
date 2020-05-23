@@ -120,11 +120,15 @@ function gameOver() {
     gameOver.style.textAlign = "center";
     gameOver.style.fontFamily = "fantasy";
     gameOver.style.color = "red";
+    gameOver.style.fontSize = "50";
     gameOver.style.verticalAlign = "middle";
 
     newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
 
     newBg.appendChild(gameOver);
+    scoreElement.remove();
+    newBg.appendChild(scoreElement);
+    scoreElement.style.color = "green";
 }
 
 window.addEventListener("keypress", ballJump);
@@ -261,7 +265,7 @@ function animate() {
 
     collisionDetection();
 
-    document.getElementById("score").innerHTML = "Score " + score;
+    scoreElement.textContent = "Score " + score;
 
 }
 
@@ -313,17 +317,17 @@ function randomY() {
 
     platformDY = Math.floor(Math.random() * 40);
 
-    platformY = platformY + platformDY;
 
     if (platformY < 260) {
-        platformY = 260;
+        platformDY = -platformDY;
 
     }
 
     if (platformY > 380) {
-        platformY = 380;
+        platformDY = platformDY;
 
     }
+     platformY = platformY + platformDY;
     platform.style.top = platformY;
 
 
@@ -369,3 +373,5 @@ back.addEventListener('click', () => {
     document.location.href = "index.html";
     back.blur();
 })
+
+ var scoreElement = document.getElementById("score");

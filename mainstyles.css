@@ -32,7 +32,7 @@ h3 {
     top: 200px;
     margin: auto;
     border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
     color: red;
     padding: 16px 18px;
     font-size: 20px;
@@ -40,10 +40,10 @@ h3 {
     outline: none;
     box-shadow: 0 9px #999;
 }
-#ready:hover {background-color: rgba(0, 0, 0, 0.85);}
+#ready:hover {background-color: rgba(50, 50, 50, 1);}
 
 #ready:active {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: "green";
   box-shadow: 0 4px #666;
   transform: translateY(3px);
 
