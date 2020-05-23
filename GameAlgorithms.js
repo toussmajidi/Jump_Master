@@ -169,7 +169,7 @@ function movePlatform() {
 
     }
 
-    if (x < 130) {
+    if (x < 140) {
 
         x = 1150;
 
@@ -192,7 +192,7 @@ function movePlatform2() {
     }
 
 
-    if (platformX2 < 130) {
+    if (platformX2 < 140) {
 
         platformX2 = 1150;
 
