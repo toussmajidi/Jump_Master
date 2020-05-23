@@ -81,6 +81,7 @@ function changeLevel() {
         clearInterval(id);
         clearInterval(levelTimer);
         congratulations();
+        music.pause();
     }
 }
 
@@ -94,6 +95,9 @@ function congratulations() {
     message.style.fontFamily = "fantasy";
     message.style.color = "orange";
     message.style.verticalAlign = "middle";
+    message.style.fontSize = "50";
+
+    background.style.lineHeight = "200px"
 
     background.appendChild(message);
 
@@ -106,7 +110,7 @@ function congratulations() {
     container.appendChild(restart);
 
     scoreElement.remove();
-    baclground.appendChild(scoreElement);
+    background.appendChild(scoreElement);
     scoreElement.style.color = "green";
 
 
