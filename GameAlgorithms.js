@@ -10,12 +10,6 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
-var green = document.getElementById("green");
-
-var blue = document.getElementById("blue");
-
-var yellow = document.getElementById("yellow");
-
 var ballX = 400;
 
 ball.style.left = ballX;
@@ -177,7 +171,7 @@ function movePlatform() {
 
     if (x < 130) {
 
-        x = 1300;
+        x = 1150;
 
         randomY();
 
@@ -200,7 +194,7 @@ function movePlatform2() {
 
     if (platformX2 < 130) {
 
-        platformX2 = 1300;
+        platformX2 = 1150;
 
         score++;
 
@@ -332,7 +326,7 @@ function randomY() {
 
     if (platformY >= 350) {
         platformY = 350;
-        platformDY = 0;
+        platformDY = -platformDY;
 
     }
     platformY = platformY + platformDY;
