@@ -10,12 +10,6 @@ var play = document.getElementById("play");
 
 var pause = document.getElementById("pause");
 
-var green = document.getElementById("green");
-
-var blue = document.getElementById("blue");
-
-var yellow = document.getElementById("yellow");
-
 var ballX = 400;
 
 ball.style.left = ballX;
@@ -332,7 +326,7 @@ function randomY() {
 
     if (platformY >= 350) {
         platformY = 350;
-        platformDY = 0;
+        platformDY = -platformDY;
 
     }
     platformY = platformY + platformDY;
