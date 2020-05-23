@@ -74,6 +74,8 @@ let levelTimer = null;
 
 var score = 0;
 
+var scoreElement = document.getElementById("score");
+
 function changeLevel() {
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
@@ -332,7 +334,7 @@ function randomY() {
         platformDY = -platformDY;
 
     }
-     platformY = platformY + platformDY;
+    platformY = platformY + platformDY;
     platform.style.top = platformY;
 
 
@@ -361,7 +363,6 @@ function randomY2() {
 var restart = document.createElement("button");
 var container = document.getElementById("container");
 
-
 restart.style.backgroundColor = "red";
 restart.classList.add("PP");
 restart.textContent = "RESTART";
@@ -378,5 +379,3 @@ back.addEventListener('click', () => {
     document.location.href = "index.html";
     back.blur();
 })
-
- var scoreElement = document.getElementById("score");
