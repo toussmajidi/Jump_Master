@@ -24,7 +24,7 @@ var y = 380;
 
 var dy = 0;
 
-var x = 1100;
+var x = 900;
 
 var dx = 1;
 
@@ -33,7 +33,7 @@ var platformY = 260;
 var platformDY = 0;
 
 
-var platformX2 = 1275;
+var platformX2 = 1075;
 
 var platformDX2 = 1;
 
@@ -167,7 +167,7 @@ function ballJump(event) {
 
 function movePlatform() {
 
-    if (x > 100) {
+    if (x > 50) {
 
         x = x - dx;
 
@@ -175,9 +175,9 @@ function movePlatform() {
 
     }
 
-    if (x < 200) {
+    if (x < 130) {
 
-        x = 1100;
+        x = 1300;
 
         randomY();
 
@@ -189,7 +189,7 @@ function movePlatform() {
 
 function movePlatform2() {
 
-    if (platformX2 > 100) {
+    if (platformX2 > 50) {
 
         platformX2 = platformX2 - platformDX2;
 
@@ -198,9 +198,9 @@ function movePlatform2() {
     }
 
 
-    if (platformX2 < 200) {
+    if (platformX2 < 130) {
 
-        platformX2 = 1100;
+        platformX2 = 1300;
 
         score++;
 
@@ -331,7 +331,7 @@ function randomY() {
     }
 
     if (platformY >= 350) {
-        platformY = 360;
+        platformY = 350;
         platformDY = 0;
 
     }
