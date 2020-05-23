@@ -317,18 +317,19 @@ function collisionDetection() {
 
 }
 
+
 function randomY() {
 
     platformDY = Math.floor(Math.random() * 40);
 
 
     if (platformY < 260) {
-        platformDY = -platformDY;
+        platformDY = platformDY;
 
     }
 
     if (platformY > 380) {
-        platformDY = platformDY;
+        platformDY = -platformDY;
 
     }
      platformY = platformY + platformDY;
