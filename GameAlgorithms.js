@@ -33,7 +33,7 @@ var platformY = 260;
 var platformDY = 0;
 
 
-var platformX2 = 1200;
+var platformX2 = 1275;
 
 var platformDX2 = 1;
 
@@ -330,8 +330,9 @@ function randomY() {
 
     }
 
-    if (platformY > 380) {
-        platformDY = -platformDY;
+    if (platformY >= 350) {
+        platformY = 360;
+        platformDY = 0;
 
     }
     platformY = platformY + platformDY;
