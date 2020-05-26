@@ -48,7 +48,6 @@ function changeLevel() {
     }
 }
 
-@ @ - 94, 6 + 95, 9 @ @
 function congratulations() {
     message.style.fontFamily = "fantasy";
     message.style.color = "orange";
@@ -58,175 +57,172 @@ function congratulations() {
     background.style.lineHeight = "200px"
 
     background.appendChild(message);
+    container.appendChild(restart);
 
-    @ @ - 106, 7 + 110, 7 @ @
-    function congratulations() {
-        container.appendChild(restart);
-
-        scoreElement.remove();
-        baclground.appendChild(scoreElement);
-        background.appendChild(scoreElement);
-        scoreElement.style.color = "green";
+    scoreElement.remove();
+    baclground.appendChild(scoreElement);
+    background.appendChild(scoreElement);
+    scoreElement.style.color = "green";
 
 
+}
+
+function gameOver() {
+    var gameOver = document.createElement('h1');
+    var newBg = document.getElementById("newBg");
+    gameOver.textContent = "GAME OVER";
+    gameOver.style.textAlign = "center";
+    gameOver.style.fontFamily = "fantasy";
+    gameOver.style.color = "red";
+    gameOver.style.fontSize = "50";
+    gameOver.style.verticalAlign = "middle";
+    newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    newBg.appendChild(gameOver);
+    scoreElement.remove();
+    newBg.appendChild(scoreElement);
+    scoreElement.style.color = "green";
+}
+window.addEventListener("keypress", ballJump);
+
+function scroll() {
+    current -= px;
+    if (direction == "h") {
+        background.style.backgroundPosition = current + "px 0";
+    } else {
+        background.style.backgroundPosition = "0 " + current + "px";
+    }
+}
+
+function ballJump(event) {
+    if (event.keyCode == 32) {
+        bounce = true;
+    }
+}
+
+function movePlatforms() {
+    if (x > 50) {
+        x = x - dx;
+        platform.style.left = x;
+    }
+    if (x < limit) {
+        x = screenWidth - (screenWidth - 1000) / 2;
+        randomY();
+        score++;
     }
 
-    function gameOver() {
-        var gameOver = document.createElement('h1');
-        var newBg = document.getElementById("newBg");
-        gameOver.textContent = "GAME OVER";
-        gameOver.style.textAlign = "center";
-        gameOver.style.fontFamily = "fantasy";
-        gameOver.style.color = "red";
-        gameOver.style.fontSize = "50";
-        gameOver.style.verticalAlign = "middle";
-        newBg.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-        newBg.appendChild(gameOver);
-        scoreElement.remove();
-        newBg.appendChild(scoreElement);
-        scoreElement.style.color = "green";
+    if (platformX2 > 50) {
+        platformX2 = platformX2 - platformDX2;
+        platform2.style.left = platformX2;
     }
-    window.addEventListener("keypress", ballJump);
-
-    function scroll() {
-        current -= px;
-        if (direction == "h") {
-            background.style.backgroundPosition = current + "px 0";
-        } else {
-            background.style.backgroundPosition = "0 " + current + "px";
-        }
+    if (platformX2 < limit) {
+        platformX2 = screenWidth - (screenWidth - 1000) / 2;
+        score++;
     }
+}
 
-    function ballJump(event) {
-        if (event.keyCode == 32) {
-            bounce = true;
-        }
+
+
+
+function moveBall() {
+    if (bounce == true && y >= 380) {
+        dy = -5;
     }
-
-    function movePlatforms() {
-        if (x > 50) {
-            x = x - dx;
-            platform.style.left = x;
-        }
-        if (x < limit) {
-            x = screenWidth - (screenWidth - 1000) / 2;
-            randomY();
-            score++;
-        }
-
-         if (platformX2 > 50) {
-            platformX2 = platformX2 - platformDX2;
-            platform2.style.left = platformX2;
-        }
-        if (platformX2 < limit) {
-            platformX2 = screenWidth - (screenWidth - 1000) / 2;
-            score++;
-        }
+    if (y > 380) {
+        y = 380;
+        dy = 0;
     }
-
-
-
-
-    function moveBall() {
-        if (bounce == true && y >= 380) {
-            dy = -5;
-        }
-        if (y > 380) {
-            y = 380;
-            dy = 0;
-        }
-        if (y < 380) {
-            dy = dy + gravity;
-            bounce = false;
-        }
-        y = y + dy;
-        ball.style.top = y;
+    if (y < 380) {
+        dy = dy + gravity;
+        bounce = false;
     }
-    play.addEventListener('click', () => {
-        if (id == null && levelTimer == null) {
-            id = setInterval("animate()", scrollspeed);
-            levelTimer = setInterval(changeLevel, 45000);
-            music.play();
-        }
-        play.blur();
-    });
-    pause.addEventListener('click', () => {
-        if (id != null && levelTimer != null) {
-            clearInterval(id);
-            clearInterval(levelTimer);
-            id = null;
-            levelTimer = null;
-            music.pause();
-            soundEffect.pause();
-        }
-        pause.blur();
-    });
-
-    function animate() {
-        scroll();
-        moveBall();
-        movePlatforms();
-        collisionDetection();
-        scoreElement.textContent = "Score " + score;
+    y = y + dy;
+    ball.style.top = y;
+}
+play.addEventListener('click', () => {
+    if (id == null && levelTimer == null) {
+        id = setInterval("animate()", scrollspeed);
+        levelTimer = setInterval(changeLevel, 45000);
+        music.play();
     }
-
-    function collisionDetection() {
-        var ballY = ball.style.top + ball.style.height;
-        var platformLeft = platform.style.left;
-        var platformTop = platform.style.top;
-        var platformBottom = platform.style.top + platform.style.height;
-        if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
-            ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
-            ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
-            ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top) {
-            clearInterval(id);
-            clearInterval(levelTimer);
-            music.pause();
-            soundEffect.play();
-            gameOver();
-            play.remove();
-            pause.remove();
-            container.appendChild(restart);
-        }
-        if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
-            ball.getBoundingClientRect().right > platform2.getBoundingClientRect().left &&
-            ball.getBoundingClientRect().top < platform2.getBoundingClientRect().bottom &&
-            ball.getBoundingClientRect().bottom > platform2.getBoundingClientRect().top) {
-            clearInterval(id);
-            clearInterval(levelTimer);
-            music.pause();
-            soundEffect.play();
-            gameOver();
-            play.remove();
-            pause.remove();
-            container.appendChild(restart);
-        }
-    }
-
-    function randomY() {
-        platformDY = Math.floor(Math.random() * 40);
-        if (platformY < 260) {
-            platformDY = platformDY;
-        }
-        if (platformY >= 350) {
-            platformY = 350;
-            platformDY = -platformDY;
-        }
-        platformY = platformY + platformDY;
-        platform.style.top = platformY;
-    }
-    var restart = document.createElement("button");
-    var container = document.getElementById("container");
-    restart.style.backgroundColor = "red";
-    restart.classList.add("PP");
-    restart.textContent = "RESTART";
-    restart.addEventListener('click', () => {
-        document.location.href = "";
-        restart.blur();
+    play.blur();
+});
+pause.addEventListener('click', () => {
+    if (id != null && levelTimer != null) {
+        clearInterval(id);
+        clearInterval(levelTimer);
         id = null;
-    });
-    var back = document.getElementById("back");
-    back.addEventListener('click', () => {
-        document.location.href = "index.html";
-        back.blur();
-    })
+        levelTimer = null;
+        music.pause();
+        soundEffect.pause();
+    }
+    pause.blur();
+});
+
+function animate() {
+    scroll();
+    moveBall();
+    movePlatforms();
+    collisionDetection();
+    scoreElement.textContent = "Score " + score;
+}
+
+function collisionDetection() {
+    var ballY = ball.style.top + ball.style.height;
+    var platformLeft = platform.style.left;
+    var platformTop = platform.style.top;
+    var platformBottom = platform.style.top + platform.style.height;
+    if (ball.getBoundingClientRect().left < platform.getBoundingClientRect().right &&
+        ball.getBoundingClientRect().right > platform.getBoundingClientRect().left &&
+        ball.getBoundingClientRect().top < platform.getBoundingClientRect().bottom &&
+        ball.getBoundingClientRect().bottom > platform.getBoundingClientRect().top) {
+        clearInterval(id);
+        clearInterval(levelTimer);
+        music.pause();
+        soundEffect.play();
+        gameOver();
+        play.remove();
+        pause.remove();
+        container.appendChild(restart);
+    }
+    if (ball.getBoundingClientRect().left < platform2.getBoundingClientRect().right &&
+        ball.getBoundingClientRect().right > platform2.getBoundingClientRect().left &&
+        ball.getBoundingClientRect().top < platform2.getBoundingClientRect().bottom &&
+        ball.getBoundingClientRect().bottom > platform2.getBoundingClientRect().top) {
+        clearInterval(id);
+        clearInterval(levelTimer);
+        music.pause();
+        soundEffect.play();
+        gameOver();
+        play.remove();
+        pause.remove();
+        container.appendChild(restart);
+    }
+}
+
+function randomY() {
+    platformDY = Math.floor(Math.random() * 40);
+    if (platformY < 260) {
+        platformDY = platformDY;
+    }
+    if (platformY >= 350) {
+        platformY = 350;
+        platformDY = -platformDY;
+    }
+    platformY = platformY + platformDY;
+    platform.style.top = platformY;
+}
+var restart = document.createElement("button");
+var container = document.getElementById("container");
+restart.style.backgroundColor = "red";
+restart.classList.add("PP");
+restart.textContent = "RESTART";
+restart.addEventListener('click', () => {
+    document.location.href = "";
+    restart.blur();
+    id = null;
+});
+var back = document.getElementById("back");
+back.addEventListener('click', () => {
+    document.location.href = "index.html";
+    back.blur();
+})
