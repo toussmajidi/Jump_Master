@@ -34,6 +34,7 @@ let levelTimer = null;
 var score = 0;
 var scoreElement = document.getElementById("score");
 
+//I wrote this****
 function changeLevel() {
     background.style.backgroundImage = "url(" + bgImg[level] + ")";
     level++;
@@ -43,19 +44,24 @@ function changeLevel() {
     if (level > bgImg.length) {
         clearInterval(id);
         clearInterval(levelTimer);
-        congratulations();
+        congratulationsStyle();
+        congratulationsAppend();
         music.pause();
     }
 }
 
-function congratulations() {
+function congratulationsStyle() {
     message.style.fontFamily = "fantasy";
     message.style.color = "orange";
     message.style.verticalAlign = "middle";
     message.style.fontSize = "50";
 
     background.style.lineHeight = "200px"
+    scoreElement.style.color = "green";
 
+}
+
+function congratulationsAppend() {
     background.appendChild(message);
     container.appendChild(restart);
 
@@ -98,7 +104,9 @@ function ballJump(event) {
         bounce = true;
     }
 }
+//**************
 
+//I wrote this ********
 function movePlatforms() {
     if (x > 50) {
         x = x - dx;
@@ -119,10 +127,10 @@ function movePlatforms() {
         score++;
     }
 }
+//**************
 
 
-
-
+//I wrote this *********
 function moveBall() {
     if (bounce == true && y >= 380) {
         dy = -5;
@@ -165,6 +173,7 @@ function animate() {
     collisionDetection();
     scoreElement.textContent = "Score " + score;
 }
+//********************
 
 function collisionDetection() {
     var ballY = ball.style.top + ball.style.height;
@@ -198,7 +207,7 @@ function collisionDetection() {
         container.appendChild(restart);
     }
 }
-
+// I wrote this ******
 function randomY() {
     platformDY = Math.floor(Math.random() * 40);
     if (platformY < 260) {
@@ -211,6 +220,9 @@ function randomY() {
     platformY = platformY + platformDY;
     platform.style.top = platformY;
 }
+//********
+
+//I wrote this ************
 var restart = document.createElement("button");
 var container = document.getElementById("container");
 restart.style.backgroundColor = "red";
@@ -226,3 +238,4 @@ back.addEventListener('click', () => {
     document.location.href = "index.html";
     back.blur();
 })
+//**********************************
