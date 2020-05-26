@@ -81,7 +81,6 @@ function changeLevel() {
         clearInterval(id);
         clearInterval(levelTimer);
         congratulations();
-        music.pause();
     }
 }
 
@@ -95,9 +94,6 @@ function congratulations() {
     message.style.fontFamily = "fantasy";
     message.style.color = "orange";
     message.style.verticalAlign = "middle";
-    message.style.fontSize = "50";
-
-    background.style.lineHeight = "200px"
 
     background.appendChild(message);
 
@@ -110,7 +106,7 @@ function congratulations() {
     container.appendChild(restart);
 
     scoreElement.remove();
-    background.appendChild(scoreElement);
+    baclground.appendChild(scoreElement);
     scoreElement.style.color = "green";
 
 
@@ -185,26 +181,7 @@ function movePlatform() {
 
 }
 
-function movePlatform2() {
 
-    if (platformX2 > 50) {
-
-        platformX2 = platformX2 - platformDX2;
-
-        platform2.style.left = platformX2;
-
-    }
-
-
-    if (platformX2 < limit) {
-
-        platformX2 = screenWidth - (screenWidth - 1000)/2;
-
-        score++;
-
-
-    }
-}
 
 
 function moveBall() {
@@ -264,8 +241,6 @@ function animate() {
     moveBall();
 
     movePlatform();
-
-    movePlatform2();
 
     collisionDetection();
 
