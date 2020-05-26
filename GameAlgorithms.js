@@ -1,4 +1,5 @@
 var background = document.getElementById("background");
+var message = document.createElement('h1');
 var platform = document.getElementById("platform");
 var platform2 = document.getElementById("platform2");
 var ball = document.getElementById("ball");
@@ -44,31 +45,43 @@ function changeLevel() {
     if (level > bgImg.length) {
         clearInterval(id);
         clearInterval(levelTimer);
-        congratulationsStyle();
-        congratulationsAppend();
+        endGame(1);
         music.pause();
     }
 }
 
-function congratulationsStyle() {
+function endGame(result){
+    if(result==0){
+        gameOver();
+    }
+    if(result==1){
+        congratulations();
+    }
+}
+
+function congratulations() {
+    background.style.backgroundColor = "black";
     message.style.fontFamily = "fantasy";
     message.style.color = "orange";
+    message.textContent = "CONGRATULATIONS! YOU FINISHED!";
+    message.style.textAlign = "center";
     message.style.verticalAlign = "middle";
     message.style.fontSize = "50";
 
-    background.style.lineHeight = "200px"
-    scoreElement.style.color = "green";
+    background.style.lineHeight = "200px";
 
-}
-
-function congratulationsAppend() {
     background.appendChild(message);
     container.appendChild(restart);
 
     scoreElement.remove();
-    baclground.appendChild(scoreElement);
     background.appendChild(scoreElement);
     scoreElement.style.color = "green";
+
+    platform.remove();
+    platform2.remove();
+    ball.remove();
+    play.remove();
+    pause.remove();
 
 
 }
@@ -170,7 +183,7 @@ function animate() {
     scroll();
     moveBall();
     movePlatforms();
-    collisionDetection();
+    //collisionDetection();
     scoreElement.textContent = "Score " + score;
 }
 //********************
@@ -188,7 +201,7 @@ function collisionDetection() {
         clearInterval(levelTimer);
         music.pause();
         soundEffect.play();
-        gameOver();
+        endGame(0);
         play.remove();
         pause.remove();
         container.appendChild(restart);
@@ -201,7 +214,7 @@ function collisionDetection() {
         clearInterval(levelTimer);
         music.pause();
         soundEffect.play();
-        gameOver();
+        endGame(0);
         play.remove();
         pause.remove();
         container.appendChild(restart);
