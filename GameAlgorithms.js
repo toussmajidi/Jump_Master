@@ -220,7 +220,6 @@ function collisionDetection() {
         container.appendChild(restart);
     }
 }
-// I wrote this ******
 function randomY() {
     platformDY = Math.floor(Math.random() * 40);
     if (platformY < 260) {
@@ -233,7 +232,6 @@ function randomY() {
     platformY = platformY + platformDY;
     platform.style.top = platformY;
 }
-//********
 
 //I wrote this ************
 var restart = document.createElement("button");
