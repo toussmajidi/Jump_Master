@@ -183,7 +183,7 @@ function animate() {
     scroll();
     moveBall();
     movePlatforms();
-    //collisionDetection();
+    collisionDetection();
     scoreElement.textContent = "Score " + score;
 }
 //********************
